@@ -1,6 +1,6 @@
 (function($) {
 	$(document).ready(function () {
-		$('.navbar a').on('click', function(e) {
+		$('.navbar a').not('.navbar-brand').on('click', function(e) {
 			e.preventDefault();
 
 			var section = $(this).data('section'),
@@ -21,6 +21,10 @@
 			$('.nav li.active').removeClass('active');
 			$('#section' + section).fadeIn();
 			$('#link' + section).addClass('active');
+
+			if ($('.navbar-toggle').is(":visible")) { 
+				$('.navbar-collapse').collapse('toggle');
+			}
 		});
 	});
 })(jQuery);
