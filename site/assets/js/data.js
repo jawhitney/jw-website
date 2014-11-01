@@ -333,5 +333,89 @@ var data = {
 				]
 			}
 		]
+	},
+	"portfolio": {
+		"entries": [
+			{
+				"title": "ExactTarget/Salesforce Marketing Cloud Corporate Website",
+				"url": "https://exacttarget.com",
+				"screenshot": "sfmc.jpg",
+				"roles": [
+					"HTML",
+					"CSS",
+					"JavaScript",
+					"jQuery",
+					"PHP",
+					"Drupal",
+					"Lead Generation"
+				]
+			},
+			{
+				"title": "Connections 2014 Website",
+				"url": "https://exacttarget.com/connections",
+				"screenshot": "cnx14.jpg",
+				"roles": [
+					"HTML",
+					"CSS",
+					"JavaScript",
+					"jQuery",
+					"PHP",
+					"Drupal",
+					"Ember.js"
+				]
+			},
+			{
+				"title": "God Tools Web Application",
+				"github": "https://github.com/jawhitney/GodToolsWebApp",
+				"screenshot": "godtools-webapp.jpg",
+				"roles": [
+					"HTML",
+					"CSS",
+					"JavaScript",
+					"jQuery",
+					"jQuery Mobile"
+				]
+			},
+			{
+				"title": "God Tools Marketing Website",
+				"url": "http://godtoolsapp.com/",
+				"screenshot": "godtools-marketing.jpg",
+				"roles": [
+					"HTML",
+					"CSS",
+					"JavaScript",
+					"jQuery",
+					"Twitter Bootstrap",
+					"Responsive Design"
+				]
+			},
+			{
+				"title": "CruChat Twitter Application",
+				"github": "http://github.com/jawhitney/CruChat",
+				"screenshot": "cruchat.jpg",
+				"roles": [
+					"HTML",
+					"CSS",
+					"JavaScript",
+					"JQuery",
+					"PHP",
+					"MySQL",
+					"Twitter Bootstrap",
+					"Responsive Design"
+				]
+			},
+			{
+				"title": "Keynote Corporate Website",
+				"url": "http://keynote.org/",
+				"screenshot": "keynote.jpg",
+				"roles": [
+					"HTML",
+					"CSS",
+					"JQuery",
+					"PHP",
+					"WordPress"
+				]
+			}
+		]
 	}
 }
