@@ -338,7 +338,7 @@ var data = {
 		"entries": [
 			{
 				"title": "ExactTarget/Salesforce Marketing Cloud Corporate Website",
-				"url": "https://exacttarget.com",
+				"url": "http://exacttarget.com",
 				"screenshot": "sfmc.jpg",
 				"roles": [
 					"HTML",
@@ -352,7 +352,7 @@ var data = {
 			},
 			{
 				"title": "Connections 2014 Website",
-				"url": "https://exacttarget.com/connections",
+				"url": "http://exacttarget.com/connections",
 				"screenshot": "cnx14.jpg",
 				"roles": [
 					"HTML",
@@ -366,7 +366,7 @@ var data = {
 			},
 			{
 				"title": "God Tools Web Application",
-				"github": "https://github.com/jawhitney/GodToolsWebApp",
+				"url": "https://github.com/jawhitney/GodToolsWebApp",
 				"screenshot": "godtools-webapp.jpg",
 				"roles": [
 					"HTML",
@@ -391,7 +391,7 @@ var data = {
 			},
 			{
 				"title": "CruChat Twitter Application",
-				"github": "http://github.com/jawhitney/CruChat",
+				"url": "http://github.com/jawhitney/CruChat",
 				"screenshot": "cruchat.jpg",
 				"roles": [
 					"HTML",
