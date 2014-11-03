@@ -106,15 +106,22 @@ h1, h2, h3, h4, h5 {
   width: 32px;
   height: 32px;
   margin-right: 10px;
+  margin-left: 0px;
 }
 
 @media (max-width: 767px) {
-  /* line 113, ../sass/style.scss */
+  /* line 114, ../sass/style.scss */
   #sectionAbout h3 {
     text-align: center;
   }
-  /* line 118, ../sass/style.scss */
+  /* line 119, ../sass/style.scss */
   #sectionAbout .contact p {
     text-align: center;
+  }
+
+  /* line 125, ../sass/style.scss */
+  .icon {
+    margin-right: 5px;
+    margin-left: 5px;
   }
 }
