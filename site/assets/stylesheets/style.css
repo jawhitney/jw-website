@@ -17,109 +17,110 @@ h1, h2, h3, h4, h5 {
 /* line 14, ../sass/style.scss */
 .navbar-inverse {
   background-color: #0088cc;
-  border-color: #ddd;
+  border-color: #eee;
 }
 /* line 20, ../sass/style.scss */
-.navbar-inverse .navbar-nav li a {
-  color: #ddd;
-}
-/* line 26, ../sass/style.scss */
-.navbar-inverse .navbar-nav li.active a {
+.navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover {
+  color: #fff;
   background-color: #0091d9;
 }
-/* line 32, ../sass/style.scss */
-.navbar-inverse .navbar-nav li.active:hover a {
-  background-color: #009be9;
+/* line 27, ../sass/style.scss */
+.navbar-inverse .navbar-nav li a {
+  color: #eee;
 }
-/* line 38, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 .navbar-inverse .navbar-collapse {
   border-color: #0088cc;
 }
-/* line 42, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .navbar-inverse .navbar-toggle {
   margin-right: 0px;
   border-color: #0088cc;
   background-color: #0091d9;
 }
-/* line 48, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 .navbar-inverse .navbar-toggle:active, .navbar-inverse .navbar-toggle:visited, .navbar-inverse .navbar-toggle:focus {
   background-color: #0091d9;
 }
-/* line 52, ../sass/style.scss */
+/* line 47, ../sass/style.scss */
 .navbar-inverse .navbar-toggle:hover {
   background-color: #009be9;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 .align-center {
   text-align: center;
 }
 
-/* line 61, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 .align-right {
   text-align: right;
 }
 
-/* line 66, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 #sectionResume .glyphicon {
   color: #ddd;
 }
-/* line 70, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 #sectionResume .glyphicon.set {
   color: #0088cc;
 }
 
-/* line 75, ../sass/style.scss */
+/* line 70, ../sass/style.scss */
 .panel {
   margin-top: 20px;
   margin-bottom: 0px;
   border-color: #0088cc;
 }
-/* line 80, ../sass/style.scss */
+/* line 75, ../sass/style.scss */
 .panel .panel-heading {
   background-color: #0088cc;
   color: #fff;
 }
 
-/* line 86, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 #sectionResume, #sectionPortfolio {
   display: none;
 }
 
-/* line 90, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 #sectionAbout {
   margin-top: 20px;
 }
-/* line 93, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 #sectionAbout h3 {
   margin-top: 0px;
 }
 
-/* line 99, ../sass/style.scss */
-#sectionAbout img, #sectionPortfolio img {
+/* line 94, ../sass/style.scss */
+#sectionPortfolio img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 105, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 .icon {
-  width: 32px;
-  height: 32px;
+  display: inline-block;
   margin-right: 10px;
   margin-left: 0px;
 }
+/* line 105, ../sass/style.scss */
+.icon img {
+  width: 32px;
+  height: 32px;
+}
 
 @media (max-width: 767px) {
-  /* line 114, ../sass/style.scss */
+  /* line 113, ../sass/style.scss */
   #sectionAbout h3 {
     text-align: center;
   }
-  /* line 119, ../sass/style.scss */
+  /* line 118, ../sass/style.scss */
   #sectionAbout .contact p {
     text-align: center;
   }
 
-  /* line 125, ../sass/style.scss */
+  /* line 124, ../sass/style.scss */
   .icon {
     margin-right: 5px;
     margin-left: 5px;

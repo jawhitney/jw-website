@@ -13,24 +13,19 @@ h1, h2, h3, h4, h5 {
 
 .navbar-inverse {
 	background-color: #0088cc;
-	border-color: #ddd;
+	border-color: #eee;
 
 	.navbar-nav {
-		li {
-			a {
-				color: #ddd;
-			}
-		}
-
-		li.active {
-			a {
+		.active {
+			a, a:focus, a:hover {
+				color: #fff;
 				background-color: #0091d9;
 			}
 		}
 
-		li.active:hover {
+		li {
 			a {
-				background-color: #009be9;
+				color: #eee;
 			}
 		}
 	}
@@ -95,7 +90,7 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
-#sectionAbout, #sectionPortfolio {
+#sectionPortfolio {
 	img {
 		max-width: 100%;
 		height: auto;
@@ -103,10 +98,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .icon {
-	width: 32px;
-	height: 32px;
+	display: inline-block;
 	margin-right: 10px;
 	margin-left: 0px;
+
+	img {
+		width: 32px;
+		height: 32px;
+	}
 }
 
 @media (max-width: 767px) {

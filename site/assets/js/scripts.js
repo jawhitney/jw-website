@@ -52,7 +52,7 @@ Handlebars.registerHelper('stars', function(rating) {
 		result += '<span class="glyphicon glyphicon-star set"></span>';
 	}
 
-	for (var i = 1; i <= 5 - rating; i++) {
+	for (var i = 1; i <= 3 - rating; i++) {
 		result += '<span class="glyphicon glyphicon-star"></span>';
 	}
 
