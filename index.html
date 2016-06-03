@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="assets/images/favicon.png">
+
+    <title>Jonathan Whitney | Digital Developer</title>
+
+    <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+    <link href="assets/stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/"><img src="assets/images/logo.png" /></a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li id="linkAbout" class="active"><a href="#" data-section="About">About</a></li>
+                            <li id="linkResume"><a href="#" data-section="Resume">Resume</a></li>
+                            <li id="linkPortfolio"><a href="#" data-section="Portfolio">Portfolio</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="sectionAbout" class="container wrapper">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="align-center">
+                            <img class="img-circle" src="assets/images/headshot.png" />
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Jonathan Whitney</h3>
+                        <h4>Digital Developer</h4>
+                        <p>Fast learning, self-motivated and self-taught digital developer seeking an opportunity to contribute to current and new web-based technologies. Experienced in frontend/backend development and design, responsive web design and web applications.</p>
+                        <p>
+                            <a href="http://linkedin.com/in/jonathanawhitney" class="icon icon-linkedin" target="_blank"><span class="socicon-linkedin"></span></a>
+                            <a href="http://github.com/jawhitney" class="icon icon-github" target="_blank"><span class="socicon-github"></span></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sectionResume" class="container wrapper">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row">
+                    <div class="col-xs-12 content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sectionPortfolio" class="container wrapper">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="row">
+                    <div class="col-xs-12 content">Portfolio</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script   src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script id="templateResume" type="text/x-handlebars-template">
+        {{#each entries}}
+            <h3>{{heading}}</h3>
+            {{#each content}}
+                {{#if heading}}
+                    <h4>{{heading}}</h4>
+                {{/if}}
+                {{#if subheading}}
+                    <h5>{{subheading}}</h5>
+                {{/if}}
+                {{#each text}}
+                    <p>{{this}}</p>
+                {{/each}}
+                {{#if list}}
+                    <ul>
+                        {{#each list}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+                {{#if ratings}}
+                    <div class="row">
+                        {{#each ratings}}
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        {{item}}
+                                    </div>
+                                    <div class="col-xs-6 align-right">
+                                        {{stars rating}}
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{/if}}
+                {{#if links}}
+                    <ul>
+                        {{#each links}}
+                            <li>{{link url text description}}</li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            {{/each}}
+        {{/each}}
+    </script>
+    <script id="templatePortfolio" type="text/x-handlebars-template">
+        {{#each entries}}
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="{{url}}" target="_blank">{{title}}</a></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <h4>My Roles:</h4>
+                                    <ul>
+                                        {{#each roles}}
+                                            <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <div class="col-xs-7">
+                                    <img src="assets/images/{{screenshot}}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </script>
+</body>
+</html>

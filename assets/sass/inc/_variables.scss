@@ -1,0 +1,9 @@
+// Custom variables
+$jaw-main: #007fa2;
+$jaw-main-light: lighten($jaw-main, 15%);
+$jaw-main-dark: darken($jaw-main, 15%);
+
+// Bootstrap overrides
+
+//== Iconography
+$icon-font-path: "../fonts/bootstrap/" !default;
