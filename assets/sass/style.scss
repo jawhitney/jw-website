@@ -11,63 +11,75 @@
 // Bootstrap
 @import "bootstrap";
 
-body {
-  padding-top: 50px;
-  padding-bottom: 20px;
+a, button, input, img {
+    @include transition(all 0.2s ease-out);
 }
 
+ul {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+a:hover {
+	opacity: 0.8;
+}
+
+// Sections
+header,
+#sectionAbout,
 footer {
-  padding: 30px 0;
+	padding: $jaw-top-bottom 0;
+	color: #fff;
+
+	a {
+		color: #fff;
+
+		&:link,
+		&:visited,
+		&:hover,
+		&:active {
+			color: #fff;
+		}
+	}
 }
 
-h1, h2, h3, h4, h5 {
-	color: #333;
-}
-
-.navbar-inverse {
+header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	width: 100%;
+	min-height: 73px;
 	background-color: $jaw-main;
-	border-color: #eee;
 
-	.navbar-nav {
-		.active {
-			a, a:focus, a:hover {
-				color: #fff;
-				background-color: $jaw-main-light;
-			}
-		}
-
-		li {
-			a {
-				color: #eee;
-			}
-		}
-	}
-
-	.navbar-collapse {
-		border-color: $jaw-main;
-	}
-
-	.navbar-toggle {
-		margin-right: 0px;
-		border-color: $jaw-main;
-		background-color: $jaw-main-light;
-	}
-
-	.navbar-toggle:active, .navbar-toggle:visited, .navbar-toggle:focus {
-		background-color: $jaw-main-light;
-	}
-
-	.navbar-toggle:hover {
-		background-color: #009be9;
+	#logo {
+		display: inline-block;
+		width: 181px;
+		height: 31px;
 	}
 }
 
-.align-center {
+main {
+	padding-top: 73px;
+
+	#headshot {
+		max-width: 250px;
+	}
+}
+
+section {
+	background-color: #fff;
+}
+
+#sectionAbout,
+footer {
+	background-color: $jaw-base-gray;
 	text-align: center;
 }
 
-.align-right {
-	text-align: right;
+footer {
+	margin-top: 15px;
+	font-size: 0.8em;
 }
 
 #sectionResume {
@@ -78,64 +90,45 @@ h1, h2, h3, h4, h5 {
 	.glyphicon.set {
 		color: $jaw-main;
 	}
-}
 
-.panel {
-	margin-top: 20px;
-	margin-bottom: 0px;
-	border-color: $jaw-main;
-
-	.panel-heading {
-		background-color: $jaw-main;
-		color: #fff;
-	}
-}
-
-// #sectionResume, #sectionPortfolio {
-// 	display: none;
-// }
-
-#sectionAbout {
-	margin-top: 20px;
-
-	h3 {
-		margin-top: 0px;
-	}
 }
 
 #sectionPortfolio {
+	text-align: center;
+
 	img {
-		max-width: 100%;
-		height: auto;
+		border: 1px solid #ddd;
+	}
+
+	li {
+		margin-bottom: 5px;
+		background-color: #ddd;
+		padding: 5px 10px;
+		font-size: 0.8em;
 	}
 }
 
-.icon {
-	display: inline-block;
-	margin-right: 10px;
-	margin-left: 0px;
+#jawNavMobile {
+	display: none;
+	padding-top: $jaw-top-bottom;
 
-	img {
-		width: 32px;
-		height: 32px;
+	a {
+		display: block;
+		padding: 5px 0;
+		text-transform: uppercase;
+		font-weight: bold;
 	}
 }
 
-@media (max-width: 767px) {
-	#sectionAbout {
-		h3 {
-			text-align: center;
-		}
+// Utilities
+.align-left {
+	text-align: left;
+}
 
-		.contact {
-			p {
-				text-align: center;
-			}
-		}
-	}
+.align-center {
+	text-align: center;
+}
 
-	.icon {
-		margin-right: 5px;
-		margin-left: 5px;
-	}
+.align-right {
+	text-align: right;
 }

@@ -7,7 +7,7 @@ jawJs.sections = [
     'Portfolio'
 ];
 
-jawJs.paddingTop = 50;
+jawJs.paddingTop = 73;
 
 $(document).ready(function () {
     jawJs.sections.forEach( function(el, i) {
@@ -20,30 +20,24 @@ $(document).ready(function () {
                 template = Handlebars.compile(templateScript);
 
             $('#section' + section + ' .content').html(template(sectionData));
-
-            if (RetinaImage !== undefined) {
-                $('#section' + section + ' .content').find('img').each(function() {
-                    new RetinaImage(this);
-                });
-            }
         }
     });
 
-    $('.navbar-nav a').on('click', function(e) {
+    $('#jawNav a, #jawNavMobile a').not('.icon').on('click', function(e) {
         e.preventDefault();
-
-        $('.navbar-nav').find('li').removeClass('active');
 
         var section = $(this).attr('href');
 
         if ( typeof section !== typeof undefined && section !== false && $(section).length ) {
-            $(this).parent().addClass('active');
-
             $('html, body').animate({
                 scrollTop: $(section).offset().top - jawJs.paddingTop
             }, 500);
         }
     });
+
+    $('.mobile-nav-trigger').on('click', function(e) {
+        $('#jawNavMobile').slideToggle();
+    })
 });
 
 // Handlebars custom helpers
@@ -71,13 +65,29 @@ Handlebars.registerHelper('stars', function(rating) {
     return new Handlebars.SafeString(result);
 });
 
+Handlebars.registerHelper('ifRowBegin', function (i, options) {
+    if (i%3 == 0) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
+Handlebars.registerHelper('ifRowEnd', function (i, l, options) {
+    if (i > 0 && i%3 == 0 || i > 0 && i == l) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
 // Data
 jawJs.data = {
     "resume": {
         "entries": [
             {
-                "heading": "Technical Skills",
-                "id": "sectionTechnicalSkills",
+                "heading": "Skills",
+                "id": "technical-skills",
                 "content": [
                     {
                         "heading": "Languages",
@@ -215,7 +225,7 @@ jawJs.data = {
             },
             {
                 "heading": "Experience",
-                "id": "sectionExperience",
+                "id": "experience",
                 "content": [
                     {
                         "heading": "Return Path (Indianapolis, IN)",
@@ -332,7 +342,7 @@ jawJs.data = {
             },
             {
                 "heading": "Education",
-                "id": "sectionEducation",
+                "id": "education",
                 "content": [
                     {
                         "heading": "University of Colorado (Boulder, CO)",

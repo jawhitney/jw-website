@@ -16,85 +16,102 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <header>
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="/"><img src="assets/images/logo.png" /></a>
+                <div class="col-md-10 col-md-offset-1">
+                    <div id="logo" class="pull-left">
+                        <a href="/"><img class="img-responsive" src="assets/images/logo.png" /></a>
                     </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#sectionAbout">About</a></li>
-                            <li><a href="#sectionTechnicalSkills">Technical Skills</a></li>
-                            <li><a href="#sectionExperience">Experience</a></li>
-                            <li><a href="#sectionEducation">Education</a></li>
-                            <li><a href="#sectionProjects">Projects</a></li>
+                    <div class="pull-right hidden-xs">
+                        <ul id="jawNav" class="list-inline">
+                            <li><a href="#headline-technical-skills">Skills</a></li>
+                            <li><a href="#headline-experience">Experience</a></li>
+                            <li><a href="#headline-education">Education</a></li>
+                            <li><a href="#headline-projects">Projects</a></li>
+                            <li><a href="http://linkedin.com/in/jonathanawhitney" class="icon icon-linkedin" target="_blank"><span class="socicon-linkedin"></span></a></li>
+                            <li><a href="http://github.com/jawhitney" class="icon icon-github" target="_blank"><span class="socicon-github"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="pull-right visible-xs-block">
+                        <button type="button" class="btn btn-default mobile-nav-trigger"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div id="jawNavMobile" class="row">
+                <div class="col-xs-12">
+                    <ul class="list-unstyled">
+                        <li><a href="#headline-technical-skills">Skills</a></li>
+                        <li><a href="#headline-experience">Experience</a></li>
+                        <li><a href="#headline-education">Education</a></li>
+                        <li><a href="#headline-projects">Projects</a></li>
+                        <li><a href="http://linkedin.com/in/jonathanawhitney" class="icon icon-linkedin" target="_blank"><span class="socicon-linkedin"></span></a></li>
+                        <li><a href="http://github.com/jawhitney" class="icon icon-github" target="_blank"><span class="socicon-github"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="sectionAbout">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <p><img id="headshot" class="img-circle" src="assets/images/headshot.png" /></p>
+                        <p>Fast learning, self-motivated and self-taught digital developer. Experienced in front-end/back-end development and design, responsive web design and web applications.</p>
+                        <ul id="jawNav" class="list-inline">
+                            <li><a href="http://linkedin.com/in/jonathanawhitney" class="icon icon-linkedin" target="_blank"><span class="socicon-linkedin"></span></a></li>
+                            <li><a href="http://github.com/jawhitney" class="icon icon-github" target="_blank"><span class="socicon-github"></span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <div id="sectionAbout" class="container wrapper">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+        </section>
+        <section id="sectionResume">
+            <div class="container">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <p class="align-center">
-                            <img class="img-circle" src="assets/images/headshot.png" />
-                        </p>
-                    </div>
-                    <div class="col-sm-6">
-                        <h3>Jonathan Whitney</h3>
-                        <h4>Digital Developer</h4>
-                        <p>Fast learning, self-motivated and self-taught digital developer. Experienced in front-end/back-end development and design, responsive web design and web applications.</p>
-                        <p>
-                            <a href="http://linkedin.com/in/jonathanawhitney" class="icon icon-linkedin" target="_blank"><span class="socicon-linkedin"></span></a>
-                            <a href="http://github.com/jawhitney" class="icon icon-github" target="_blank"><span class="socicon-github"></span></a>
-                        </p>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <div class="col-xs-12 content"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div id="sectionResume" class="container wrapper">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+        </section>
+        <section id="sectionPortfolio">
+            <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 content"></div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="row">
+                            <div class="col-xs-12 content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <ul class="list-inline">
+                        <li>&copy; Jonathan Whitney - 2016</li>
+                        <li><a href="http://linkedin.com/in/jonathanawhitney" class="icon icon-linkedin" target="_blank"><span class="socicon-linkedin"></span></a></li>
+                        <li><a href="http://github.com/jawhitney" class="icon icon-github" target="_blank"><span class="socicon-github"></span></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="sectionPortfolio" class="container wrapper">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="row">
-                    <div class="col-xs-12 content"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </footer>
 
     <!-- JavaScript -->
-    <script   src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script id="templateResume" type="text/x-handlebars-template">
         {{#each entries}}
-            <h2 id="{{id}}">{{heading}}</h2>
+            <h2 id="headline-{{id}}">{{heading}}</h2>
             <hr/>
             {{#each content}}
                 {{#if heading}}
@@ -130,7 +147,7 @@
                     </div>
                 {{/if}}
                 {{#if links}}
-                    <ul>
+                    <ul class="list-unstyled">
                         {{#each links}}
                             <li>{{link url text description}}</li>
                         {{/each}}
@@ -140,32 +157,19 @@
         {{/each}}
     </script>
     <script id="templatePortfolio" type="text/x-handlebars-template">
-        <h2 id="sectionProjects">Projects</h2>
+        <h2 id="headline-projects">Projects</h2>
         <hr/>
         {{#each entries}}
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><a href="{{url}}" target="_blank">{{title}}</a></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-xs-5">
-                                    <h4>My Roles:</h4>
-                                    <ul>
-                                        {{#each roles}}
-                                            <li>{{this}}</li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
-                                <div class="col-xs-7">
-                                    <img src="assets/images/{{screenshot}}" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            {{#ifRowEnd @index entries.length}}</div>{{/ifRowEnd}}
+            {{#ifRowBegin @index}}<div class="row">{{/ifRowBegin}}
+            <div class="col-md-4">
+                <h4>{{title}}</h4>
+                <p><img class="img-responsive" src="assets/images/{{screenshot}}" /></p>
+                <ul class="list-inline">
+                    {{#each roles}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
             </div>
         {{/each}}
     </script>
