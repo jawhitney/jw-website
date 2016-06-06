@@ -31,7 +31,11 @@ $(document).ready(function () {
         if ( typeof section !== typeof undefined && section !== false && $(section).length ) {
             $('html, body').animate({
                 scrollTop: $(section).offset().top - jawJs.paddingTop
-            }, 500);
+            }, 400);
+
+            if ($('#jawNavMobile').is(':visible')) {
+                $('#jawNavMobile').slideToggle();
+            }
         }
     });
 
