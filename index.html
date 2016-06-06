@@ -31,9 +31,11 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li id="linkAbout" class="active"><a href="#" data-section="About">About</a></li>
-                            <li id="linkResume"><a href="#" data-section="Resume">Resume</a></li>
-                            <li id="linkPortfolio"><a href="#" data-section="Portfolio">Portfolio</a></li>
+                            <li class="active"><a href="#sectionAbout">About</a></li>
+                            <li><a href="#sectionTechnicalSkills">Technical Skills</a></li>
+                            <li><a href="#sectionExperience">Experience</a></li>
+                            <li><a href="#sectionEducation">Education</a></li>
+                            <li><a href="#sectionProjects">Projects</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,7 +55,7 @@
                     <div class="col-sm-6">
                         <h3>Jonathan Whitney</h3>
                         <h4>Digital Developer</h4>
-                        <p>Fast learning, self-motivated and self-taught digital developer seeking an opportunity to contribute to current and new web-based technologies. Experienced in frontend/backend development and design, responsive web design and web applications.</p>
+                        <p>Fast learning, self-motivated and self-taught digital developer. Experienced in front-end/back-end development and design, responsive web design and web applications.</p>
                         <p>
                             <a href="http://linkedin.com/in/jonathanawhitney" class="icon icon-linkedin" target="_blank"><span class="socicon-linkedin"></span></a>
                             <a href="http://github.com/jawhitney" class="icon icon-github" target="_blank"><span class="socicon-github"></span></a>
@@ -78,7 +80,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="row">
-                    <div class="col-xs-12 content">Portfolio</div>
+                    <div class="col-xs-12 content"></div>
                 </div>
             </div>
         </div>
@@ -92,7 +94,8 @@
     <script src="assets/js/scripts.js"></script>
     <script id="templateResume" type="text/x-handlebars-template">
         {{#each entries}}
-            <h3>{{heading}}</h3>
+            <h2 id="{{id}}">{{heading}}</h2>
+            <hr/>
             {{#each content}}
                 {{#if heading}}
                     <h4>{{heading}}</h4>
@@ -137,6 +140,8 @@
         {{/each}}
     </script>
     <script id="templatePortfolio" type="text/x-handlebars-template">
+        <h2 id="sectionProjects">Projects</h2>
+        <hr/>
         {{#each entries}}
             <div class="row">
                 <div class="col-xs-12">

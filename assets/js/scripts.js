@@ -7,6 +7,8 @@ jawJs.sections = [
     'Portfolio'
 ];
 
+jawJs.paddingTop = 50;
+
 $(document).ready(function () {
     jawJs.sections.forEach( function(el, i) {
         var section = el,
@@ -24,6 +26,22 @@ $(document).ready(function () {
                     new RetinaImage(this);
                 });
             }
+        }
+    });
+
+    $('.navbar-nav a').on('click', function(e) {
+        e.preventDefault();
+
+        $('.navbar-nav').find('li').removeClass('active');
+
+        var section = $(this).attr('href');
+
+        if ( typeof section !== typeof undefined && section !== false && $(section).length ) {
+            $(this).parent().addClass('active');
+
+            $('html, body').animate({
+                scrollTop: $(section).offset().top - jawJs.paddingTop
+            }, 500);
         }
     });
 });
@@ -59,6 +77,7 @@ jawJs.data = {
         "entries": [
             {
                 "heading": "Technical Skills",
+                "id": "sectionTechnicalSkills",
                 "content": [
                     {
                         "heading": "Languages",
@@ -134,11 +153,11 @@ jawJs.data = {
                         "heading": "CMS",
                         "ratings": [
                             {
-                                "item": "Drupal",
+                                "item": "WordPress",
                                 "rating": 3
                             },
                             {
-                                "item": "WordPress",
+                                "item": "Drupal",
                                 "rating": 3
                             },
                             {
@@ -164,7 +183,11 @@ jawJs.data = {
                             },
                             {
                                 "item": "Sass",
-                                "rating": 2
+                                "rating": 3
+                            },
+                            {
+                                "item": "Less",
+                                "rating": 3
                             },
                             {
                                 "item": "Grunt",
@@ -192,7 +215,32 @@ jawJs.data = {
             },
             {
                 "heading": "Experience",
+                "id": "sectionExperience",
                 "content": [
+                    {
+                        "heading": "Return Path (Indianapolis, IN)",
+                        "subheading": "Senior Digital Developer (June 2015 - Present)",
+                        "text": [
+                            "As part of the Marketing Digital team I have supported the development of Return Path's public facing digital properties. This has included device optimization, demand-gen optimization, lead form optimization, digital analytics, CMS optimization, and implementation of new features and functionality. I have also created digital experiences that demonstrate the use of the Return Path product."
+                        ],
+                        "links": [
+                            {
+                                "url": "https://returnpath.com",
+                                "text": "ReturnPath.com",
+                                "description": "Return Path Corporate Site"
+                            },
+                            {
+                                "url": "https://blog.returnpath.com",
+                                "text": "Blog",
+                                "description": "Return Path Blog"
+                            },
+                            {
+                                "url": "https://returnpath.com/emailforpresident",
+                                "text": "Email for President",
+                                "description": "Email for President digital experience"
+                            }
+                        ]
+                    },
                     {
                         "heading": "Salesforce Marketing Cloud/ExactTarget (Indianapolis, IN)",
                         "subheading": "Digital Developer (October 2013 - Present)",
@@ -284,6 +332,7 @@ jawJs.data = {
             },
             {
                 "heading": "Education",
+                "id": "sectionEducation",
                 "content": [
                     {
                         "heading": "University of Colorado (Boulder, CO)",
@@ -291,19 +340,6 @@ jawJs.data = {
                         "text": [
                             "Honors: College of Engineering and Applied Science Dean's List (Fall 2001, Fall 2002, Spring 2003, Fall 2004)",
                             "Activities: Alpha Gamma Omega Fraternity, Sigma Gamma Tau (Aerospace Honor Fraternity), University Christian Fellowship, American Indian Science and Engineering Society, Multicultural Engineering Program"
-                        ]
-                    }
-                ]
-            },
-            {
-                "heading": "Personal Development",
-                "content": [
-                    {
-                        "list": [
-                            "Dreamforce (San Francisco, CA 2014)",
-                            "CodeSchool.com (2012 - Present)",
-                            "South by Southwest (SXSW) Interactive (Austin, TX, 2011, 2012",
-                            "Web 2.0 Expo (New York, NY, 2010)"
                         ]
                     }
                 ]
