@@ -1,0 +1,21 @@
+//== Custom variables
+
+// Colors
+$jaw-main: #007fa2;
+$jaw-main-light: lighten($jaw-main, 5%);
+$jaw-main-dark: darken($jaw-main, 5%);
+$jaw-base-gray: #474747;
+
+// Spacing
+$jaw-top-bottom: 20px;
+
+// Bootstrap overrides
+
+//== Scaffolding
+$brand-primary: $jaw-main !default;
+
+//== Iconography
+$icon-font-path: "../assets/fonts/bootstrap/" !default;
+
+//== Navbar
+$navbar-height: 62px !default;
