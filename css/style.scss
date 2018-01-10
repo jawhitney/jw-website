@@ -2,136 +2,145 @@
 ---
 
 /*!
- * JAW - Main 1.0.0
- * Copyright 2016 Jonathan Whitney
+ * JAW - Main 2.0.0
+ * Copyright 2018 Jonathan Whitney
  */
 
 @charset "utf-8";
 
-// Includes
+//== Includes
 @import "inc/variables";
 
-// Bootstrap
-@import "bootstrap";
+//== Bootstrap
+@import "bootstrap4/bootstrap";
 
-a, button, input, img {
-    @include transition(all 0.2s ease-out);
-}
+//== JAW
+@import "inc/global";
+@import "inc/header";
+@import "inc/sections";
+@import "inc/footer";
 
-ul {
-	margin: 0 !important;
-	padding: 0 !important;
-}
+//== Font Awesome
+@import "font-awesome/font-awesome";
 
-a:hover {
-	opacity: 0.8;
-}
-
-// Sections
-header,
-#sectionAbout,
-footer {
-	padding: $jaw-top-bottom 0;
-	color: #fff;
-
-	a {
-		color: #fff;
-
-		&:link,
-		&:visited,
-		&:hover,
-		&:active {
-			color: #fff;
-		}
-	}
-}
-
-header {
-	position: fixed;
-	left: 0;
-	right: 0;
-	z-index: 9999;
-	width: 100%;
-	min-height: 73px;
-	background-color: $jaw-main;
-
-	#logo {
-		display: inline-block;
-		width: 181px;
-		height: 31px;
-	}
-}
-
-main {
-	padding-top: 73px;
-
-	#headshot {
-		max-width: 250px;
-	}
-}
-
-section {
-	background-color: #fff;
-}
-
-#sectionAbout,
-footer {
-	background-color: $jaw-base-gray;
-	text-align: center;
-}
-
-footer {
-	margin-top: 15px;
-	font-size: 0.8em;
-}
-
-#sectionResume {
-	.glyphicon {
-		color: #ddd;
-	}
-
-	.glyphicon.set {
-		color: $jaw-main;
-	}
-
-}
-
-#sectionPortfolio {
-	text-align: center;
-
-	img {
-		border: 1px solid #ddd;
-	}
-
-	li {
-		margin-bottom: 5px;
-		background-color: #ddd;
-		padding: 5px 10px;
-		font-size: 0.8em;
-	}
-}
-
-#jawNavMobile {
-	display: none;
-	padding-top: $jaw-top-bottom;
-
-	a {
-		display: block;
-		padding: 5px 0;
-		text-transform: uppercase;
-		font-weight: bold;
-	}
-}
-
-// Utilities
-.align-left {
-	text-align: left;
-}
-
-.align-center {
-	text-align: center;
-}
-
-.align-right {
-	text-align: right;
-}
+// a, button, input, img {
+//     @include transition(all 0.2s ease-out);
+// }
+//
+// ul {
+// 	margin: 0 !important;
+// 	padding: 0 !important;
+// }
+//
+// a:hover {
+// 	opacity: 0.8;
+// }
+//
+// // Sections
+// header,
+// #sectionAbout,
+// footer {
+// 	padding: $jaw-top-bottom 0;
+// 	color: #fff;
+//
+// 	a {
+// 		color: #fff;
+//
+// 		&:link,
+// 		&:visited,
+// 		&:hover,
+// 		&:active {
+// 			color: #fff;
+// 		}
+// 	}
+// }
+//
+// header {
+// 	position: fixed;
+// 	left: 0;
+// 	right: 0;
+// 	z-index: 9999;
+// 	width: 100%;
+// 	min-height: 73px;
+// 	background-color: $jaw-main;
+//
+// 	#logo {
+// 		display: inline-block;
+// 		width: 181px;
+// 		height: 31px;
+// 	}
+// }
+//
+// main {
+// 	padding-top: 73px;
+//
+// 	#headshot {
+// 		max-width: 250px;
+// 	}
+// }
+//
+// section {
+// 	background-color: #fff;
+// }
+//
+// #sectionAbout,
+// footer {
+// 	background-color: $jaw-base-gray;
+// 	text-align: center;
+// }
+//
+// footer {
+// 	margin-top: 15px;
+// 	font-size: 0.8em;
+// }
+//
+// #sectionResume {
+// 	.glyphicon {
+// 		color: #ddd;
+// 	}
+//
+// 	.glyphicon.set {
+// 		color: $jaw-main;
+// 	}
+//
+// }
+//
+// #sectionPortfolio {
+// 	text-align: center;
+//
+// 	img {
+// 		border: 1px solid #ddd;
+// 	}
+//
+// 	li {
+// 		margin-bottom: 5px;
+// 		background-color: #ddd;
+// 		padding: 5px 10px;
+// 		font-size: 0.8em;
+// 	}
+// }
+//
+// #jawNavMobile {
+// 	display: none;
+// 	padding-top: $jaw-top-bottom;
+//
+// 	a {
+// 		display: block;
+// 		padding: 5px 0;
+// 		text-transform: uppercase;
+// 		font-weight: bold;
+// 	}
+// }
+//
+// // Utilities
+// .align-left {
+// 	text-align: left;
+// }
+//
+// .align-center {
+// 	text-align: center;
+// }
+//
+// .align-right {
+// 	text-align: right;
+// }

@@ -1,0 +1,87 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <ul class="list-inline">
+                    <li>&copy; Jonathan Whitney - 2016</li>
+                    <li><a href="http://linkedin.com/in/jonathanawhitney" class="icon icon-linkedin" target="_blank"><span class="socicon-linkedin"></span></a></li>
+                    <li><a href="http://github.com/jawhitney" class="icon icon-github" target="_blank"><span class="socicon-github"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script id="templateResume" type="text/x-handlebars-template">
+    {% raw %}
+        {{#each entries}}
+            <h2 id="headline-{{id}}">{{heading}}</h2>
+            <hr/>
+            {{#each content}}
+                {{#if heading}}
+                    <h4>{{heading}}</h4>
+                {{/if}}
+                {{#if subheading}}
+                    <h5>{{subheading}}</h5>
+                {{/if}}
+                {{#each text}}
+                    <p>{{this}}</p>
+                {{/each}}
+                {{#if list}}
+                    <ul>
+                        {{#each list}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+                {{#if ratings}}
+                    <div class="row">
+                        {{#each ratings}}
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        {{item}}
+                                    </div>
+                                    <div class="col-xs-6 align-right">
+                                        {{stars rating}}
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{/if}}
+                {{#if links}}
+                    <ul class="list-unstyled">
+                        {{#each links}}
+                            <li>{{link url text description}}</li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            {{/each}}
+        {{/each}}
+    {% endraw %}
+</script>
+<script id="templatePortfolio" type="text/x-handlebars-template">
+    <h2 id="headline-projects">Projects</h2>
+    <hr/>
+    {% raw %}
+        {{#each entries}}
+            {{#ifRowEnd @index entries.length}}</div>{{/ifRowEnd}}
+            {{#ifRowBegin @index}}<div class="row">{{/ifRowBegin}}
+            <div class="col-md-4">
+                <h4>{{title}}</h4>
+                <p><img class="img-responsive" src="assets/images/{{screenshot}}" /></p>
+                <ul class="list-inline">
+                    {{#each roles}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        {{/each}}
+    {% endraw %}
+</script>

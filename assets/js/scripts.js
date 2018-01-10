@@ -10,6 +10,13 @@ jawJs.sections = [
 jawJs.paddingTop = 73;
 
 $(document).ready(function () {
+    var today = new Date(),
+        year = today.getFullYear(),
+        cr_year = document.createTextNode(year),
+        cr_year_element = document.getElementById('copyrightYear');
+
+    cr_year_element.appendChild(cr_year);
+
     jawJs.sections.forEach( function(el, i) {
         var section = el,
             sectionData = jawJs.data[section.toLowerCase()],
@@ -45,11 +52,11 @@ $(document).ready(function () {
 });
 
 // Handlebars custom helpers
-Handlebars.registerHelper('link', function(url, text, description) {
+Handlebars.registerHelper('link', function(url, description) {
     var text = Handlebars.Utils.escapeExpression(text),
         url = Handlebars.Utils.escapeExpression(url),
   		description  = Handlebars.Utils.escapeExpression(description),
-  		result = '<a href="' + url + '" target="_blank">' + text + '</a>: ' + description;
+  		result = '<a href="' + url + '" target="_blank">' + description + '</a>';
 
     return new Handlebars.SafeString(result);
 });
@@ -59,11 +66,11 @@ Handlebars.registerHelper('stars', function(rating) {
   		result = '';
 
     for (var i = 1; i <= rating; i++) {
-		result += '<span class="glyphicon glyphicon-star set"></span>';
+		result += '<i class="fa fa-star" aria-hidden="true"></i>';
 	}
 
 	for (var i = 1; i <= 3 - rating; i++) {
-		result += '<span class="glyphicon glyphicon-star"></span>';
+		result += '<i class="fa fa-star-o" aria-hidden="true"></i>';
 	}
 
     return new Handlebars.SafeString(result);
@@ -150,7 +157,11 @@ jawJs.data = {
                                 "rating": 3
                             },
                             {
-                                "item": "Handlebars",
+                                "item": "Handlebars.js",
+                                "rating": 3
+                            },
+                            {
+                                "item": "Phaser.js",
                                 "rating": 3
                             },
                             {
@@ -192,7 +203,7 @@ jawJs.data = {
                                 "rating": 3
                             },
                             {
-                                "item": "Twitter Bootstrap",
+                                "item": "Twitter Bootstrap (3, 4)",
                                 "rating": 3
                             },
                             {
@@ -204,7 +215,19 @@ jawJs.data = {
                                 "rating": 3
                             },
                             {
+                                "item": "Gulp",
+                                "rating": 2
+                            },
+                            {
                                 "item": "Grunt",
+                                "rating": 2
+                            },
+                            {
+                                "item": "Marketo",
+                                "rating": 3
+                            },
+                            {
+                                "item": "Eloqua",
                                 "rating": 2
                             },
                             {
@@ -240,51 +263,59 @@ jawJs.data = {
                         "links": [
                             {
                                 "url": "https://returnpath.com",
-                                "text": "ReturnPath.com",
-                                "description": "Return Path Corporate Site"
+                                // "text": "ReturnPath.com",
+                                "description": "Return Path corporate site"
                             },
                             {
                                 "url": "https://blog.returnpath.com",
-                                "text": "Blog",
-                                "description": "Return Path Blog"
+                                // "text": "Blog",
+                                "description": "Return Path blog"
                             },
                             {
                                 "url": "https://returnpath.com/emailforpresident",
-                                "text": "Email for President",
+                                // "text": "Email for President",
                                 "description": "Email for President digital experience"
-                            }
+                            },
+                            {
+                                "url": "https://returnpath.com/superpowers/",
+                                "description": "Guardians of the Email Universe digital experience"
+                            },
+                            {
+                                "url": "https://returnpath.com/path-to-the-inbox/",
+                                "description": "Path to the Inbox game"
+                            },
                         ]
                     },
                     {
                         "heading": "Salesforce Marketing Cloud/ExactTarget (Indianapolis, IN)",
                         "subheading": "Digital Developer (October 2013 - Present)",
                         "text": [
-                            "As part of the Marketing team I have supported the development of Salesforce Marketing Cloud’s public facing digital properties. This has included demand-gen optimization, lead form optimization, digital analytics and refresh of website designs. I have also provided digital experiences for public events including Connections 2014 and South by Southwest 2014 that demonstrated the Salesforce Marketing Cloud product. Internally, I provided a way for our digital property analytics to be easily accessed via Salesforce and Salesforce1."
+                            "As part of the Marketing team I supported the development of Salesforce Marketing Cloud’s public facing digital properties including salesforce.com and exacttarget.com. This has included demand-gen optimization, lead form optimization, digital analytics and refresh of website designs. I have also provided digital experiences for public events including Connections 2014 and South by Southwest 2014 that demonstrated the Salesforce Marketing Cloud product. Internally, I provided a way for our digital property analytics to be easily accessed via Salesforce and Salesforce1."
                         ],
-                        "links": [
-                            {
-                                "url": "http://exacttarget.com",
-                                "text": "ExactTarget.com",
-                                "description": "Homepage of the Salesforce Marketing Cloud"
-                            },
-                            {
-                                "url": "http://exacttarget.com/connections",
-                                "text": "Connections",
-                                "description": "Homepage for the Connections event"
-                            },
-                            {
-                                "url": "http://www.exacttarget.com/blog/journey-builder-and-the-connections-2014-mobile-app/",
-                                "text": "Blog Post",
-                                "description": "Journey Builder and the Connections 2014 Mobile App"
-                            }
-                        ]
+                        // "links": [
+                        //     {
+                        //         "url": "http://exacttarget.com",
+                        //         "text": "ExactTarget.com",
+                        //         "description": "Homepage of the Salesforce Marketing Cloud"
+                        //     },
+                        //     {
+                        //         "url": "http://exacttarget.com/connections",
+                        //         "text": "Connections",
+                        //         "description": "Homepage for the Connections event"
+                        //     },
+                        //     {
+                        //         "url": "http://www.exacttarget.com/blog/journey-builder-and-the-connections-2014-mobile-app/",
+                        //         "text": "Blog Post",
+                        //         "description": "Journey Builder and the Connections 2014 Mobile App"
+                        //     }
+                        // ]
                     },
                     {
                         "heading": "Blue Horseshoe Solutions (Carmel, IN)",
                         "subheading": "Developer (February 2013 to October 2013)",
                         "text": [
                             "Designed and implemented warehouse management and supply chain solutions for external clients. This has included the design and development of new web applications, debugging of existing web applications, and implementation of new features for existing applications.",
-                            "As the lead technical developer, I designed and developed a web portal for a 3rd Party Logistics Company. This portal allowed this company and the companyâ€™s clients to create and edit shipments, reports, items, customers, and accounts. My role included creating wireframes, writing a functional requirements document, performing UI design, and front end/back end design and development. This is application was being built using ASP.NET MVC3, SQL, JavaScript, jQuery, Twitter Bootstrap."
+                            "As the lead technical developer, I designed and developed a web portal for a 3rd Party Logistics Company. This portal allowed this company and the company’s clients to create and edit shipments, reports, items, customers, and accounts. My role included creating wireframes, writing a functional requirements document, performing UI design, and front end/back end design and development. This is application was being built using ASP.NET MVC3, SQL, JavaScript, jQuery, Twitter Bootstrap."
                         ]
                     },
                     {
@@ -295,30 +326,30 @@ jawJs.data = {
                         ],
                         "links": [
                             {
-                                "url": "http://godtoolsapp.com/webapp",
-                                "text": "God Tools",
-                                "description": "Evangelistic HTML5 web application optimized for mobile devices (JQuery Mobile, JavaScript, AJAX)"
+                                "url": "https://github.com/jawhitney/GodToolsWebApp",
+                                "description": "God Tools Web Application (GitHub repo)"
+                                // "description": "Evangelistic HTML5 web application optimized for mobile devices (JQuery Mobile, JavaScript, AJAX)"
                             },
-                            {
-                                "url": "http://godtoolsapp.com",
-                                "text": "God Tools marketing website",
-                                "description": "God Tools web, iOS, and Android application marketing page (Twitter Bootstrap, responsive design)"
-                            },
+                            // {
+                            //     "url": "http://godtoolsapp.com",
+                            //     "text": "God Tools marketing website",
+                            //     "description": "God Tools web, iOS, and Android application marketing page (Twitter Bootstrap, responsive design)"
+                            // },
                             {
                                 "url": "http://github.com/jawhitney/CruChat",
-                                "text": "CruChat GitHub page",
-                                "description": "Evangelistic HTML5 Twitter web application (JQuery, PHP, responsive design)"
-                            },
-                            {
-                                "url": "http://missionhub.com",
-                                "text": "MissionHub",
-                                "description": "Contact management system (performed front-end development in Ruby on Rails)"
-                            },
-                            {
-                                "url": "http://keynote.org",
-                                "text": "Keynote corporate website",
-                                "description": "Keynote corporate website (WordPress)"
+                                "description": "CruChat (GitHub repo)",
+                                // "description": "Evangelistic HTML5 Twitter web application (JQuery, PHP, responsive design)"
                             }
+                            // {
+                            //     "url": "http://missionhub.com",
+                            //     "text": "MissionHub",
+                            //     "description": "Contact management system (performed front-end development in Ruby on Rails)"
+                            // },
+                            // {
+                            //     "url": "http://keynote.org",
+                            //     "text": "Keynote corporate website",
+                            //     "description": "Keynote corporate website (WordPress)"
+                            // }
                         ]
                     },
                     {
@@ -345,6 +376,42 @@ jawJs.data = {
                 ]
             },
             {
+                "heading": "Awards and Publications",
+                "id": "awardsPublications",
+                "content": [
+                    {
+                        "heading": "Awards",
+                        "links": [
+                            {
+                                "url": "http://www.dotcommawards.com/",
+                                "description": "2017 DotCOMM Platinum award in the \"Outstanding Microsite\" category for Email for President"
+                            },
+                            {
+                                "url": "http://www.dotcommawards.com/",
+                                "description": "2017 DotCOMM Gold award in the \"Outstanding Microsite\" category for Guardians of the Email Universe"
+                            },
+                            {
+                                "url": "https://enter.hermesawards.com/",
+                                "description": "2017 Hermes Creative Platinum award in the \"Interactive Microsite\" category for Email for President"
+                            },
+                            {
+                                "url": "https://enter.hermesawards.com/",
+                                "description": "2017 Hermes Creative Gold award in the \"Interactive Microsite\" category for Guardians of the Email Universe"
+                            },
+                        ]
+                    },
+                    {
+                        "heading": "Publications",
+                        "links": [
+                            {
+                                "url": "https://www.salesforce.com/blog/2014/10/journey-builder-and-the-connections-2014-mobile-app.html?mc=marketingcloud.com/blog/journey-builder-and-the-connections-2014-mobile-app",
+                                "description": "Journey Builder and the Connections 2014 Mobile App"
+                            },
+                        ]
+                    }
+                ]
+            },
+            {
                 "heading": "Education",
                 "id": "education",
                 "content": [
@@ -360,89 +427,88 @@ jawJs.data = {
             }
         ]
     },
-    "portfolio": {
-        "entries": [
-            {
-                "title": "ExactTarget/Salesforce Marketing Cloud Corporate Website",
-                "url": "http://exacttarget.com",
-                "screenshot": "sfmc.jpg",
-                "roles": [
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "jQuery",
-                    "PHP",
-                    "Drupal",
-                    "Lead Generation"
-                ]
-            },
-            {
-                "title": "Connections 2014 Website",
-                "url": "http://exacttarget.com/connections",
-                "screenshot": "cnx14.jpg",
-                "roles": [
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "jQuery",
-                    "PHP",
-                    "Drupal",
-                    "Ember.js"
-                ]
-            },
-            {
-                "title": "God Tools Web Application",
-                "url": "https://github.com/jawhitney/GodToolsWebApp",
-                "screenshot": "godtools-webapp.jpg",
-                "roles": [
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "jQuery",
-                    "jQuery Mobile"
-                ]
-            },
-            {
-                "title": "God Tools Marketing Website",
-                "url": "http://godtoolsapp.com/",
-                "screenshot": "godtools-marketing.jpg",
-                "roles": [
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "jQuery",
-                    "Twitter Bootstrap",
-                    "Responsive Design"
-                ]
-            },
-            {
-                "title": "CruChat Twitter Application",
-                "url": "http://github.com/jawhitney/CruChat",
-                "screenshot": "cruchat.jpg",
-                "roles": [
-                    "HTML",
-                    "CSS",
-                    "JavaScript",
-                    "JQuery",
-                    "PHP",
-                    "MySQL",
-                    "Twitter Bootstrap",
-                    "Responsive Design"
-                ]
-            },
-            {
-                "title": "Keynote Corporate Website",
-                "url": "http://keynote.org/",
-                "screenshot": "keynote.jpg",
-                "roles": [
-                    "HTML",
-                    "CSS",
-                    "JQuery",
-                    "PHP",
-                    "WordPress"
-                ]
-            }
-        ]
-    }
+    // "portfolio": {
+    //     "entries": [
+    //         {
+    //             "title": "ExactTarget/Salesforce Marketing Cloud Corporate Website",
+    //             "url": "http://exacttarget.com",
+    //             "screenshot": "sfmc.jpg",
+    //             "roles": [
+    //                 "HTML",
+    //                 "CSS",
+    //                 "JavaScript",
+    //                 "jQuery",
+    //                 "PHP",
+    //                 "Drupal",
+    //                 "Lead Generation"
+    //             ]
+    //         },
+    //         {
+    //             "title": "Connections 2014 Website",
+    //             "url": "http://exacttarget.com/connections",
+    //             "screenshot": "cnx14.jpg",
+    //             "roles": [
+    //                 "HTML",
+    //                 "CSS",
+    //                 "JavaScript",
+    //                 "jQuery",
+    //                 "PHP",
+    //                 "Drupal",
+    //                 "Ember.js"
+    //             ]
+    //         },
+    //         {
+    //             "title": "God Tools Web Application",
+    //             "url": "https://github.com/jawhitney/GodToolsWebApp",
+    //             "screenshot": "godtools-webapp.jpg",
+    //             "roles": [
+    //                 "HTML",
+    //                 "CSS",
+    //                 "JavaScript",
+    //                 "jQuery",
+    //                 "jQuery Mobile"
+    //             ]
+    //         },
+    //         {
+    //             "title": "God Tools Marketing Website",
+    //             "url": "http://godtoolsapp.com/",
+    //             "screenshot": "godtools-marketing.jpg",
+    //             "roles": [
+    //                 "HTML",
+    //                 "CSS",
+    //                 "JavaScript",
+    //                 "jQuery",
+    //                 "Twitter Bootstrap",
+    //                 "Responsive Design"
+    //             ]
+    //         },
+    //         {
+    //             "title": "CruChat Twitter Application",
+    //             "url": "http://github.com/jawhitney/CruChat",
+    //             "screenshot": "cruchat.jpg",
+    //             "roles": [
+    //                 "HTML",
+    //                 "CSS",
+    //                 "JavaScript",
+    //                 "JQuery",
+    //                 "PHP",
+    //                 "MySQL",
+    //                 "Twitter Bootstrap",
+    //                 "Responsive Design"
+    //             ]
+    //         },
+    //         {
+    //             "title": "Keynote Corporate Website",
+    //             "url": "http://keynote.org/",
+    //             "screenshot": "keynote.jpg",
+    //             "roles": [
+    //                 "HTML",
+    //                 "CSS",
+    //                 "JQuery",
+    //                 "PHP",
+    //                 "WordPress"
+    //             ]
+    //         }
+    //     ]
+    // }
 }
-

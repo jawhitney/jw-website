@@ -1,87 +1,108 @@
 <footer>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-lg-10 offset-lg-1 text-center">
                 <ul class="list-inline">
-                    <li>&copy; Jonathan Whitney - 2016</li>
-                    <li><a href="http://linkedin.com/in/jonathanawhitney" class="icon icon-linkedin" target="_blank"><span class="socicon-linkedin"></span></a></li>
-                    <li><a href="http://github.com/jawhitney" class="icon icon-github" target="_blank"><span class="socicon-github"></span></a></li>
+                    <li class="list-inline-item"><a href="http://linkedin.com/in/jonathanawhitney" target="_blank"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="http://github.com/jawhitney" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a></li>
+                </ul>
+                <ul class="list-inline">
+                    <li class="list-inline-item">&copy; Jonathan Whitney - <span id="copyrightYear"></span></li>
                 </ul>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <script src="assets/js/scripts.js"></script>
 <script id="templateResume" type="text/x-handlebars-template">
     {% raw %}
         {{#each entries}}
-            <h2 id="headline-{{id}}">{{heading}}</h2>
-            <hr/>
-            {{#each content}}
-                {{#if heading}}
-                    <h4>{{heading}}</h4>
-                {{/if}}
-                {{#if subheading}}
-                    <h5>{{subheading}}</h5>
-                {{/if}}
-                {{#each text}}
-                    <p>{{this}}</p>
-                {{/each}}
-                {{#if list}}
-                    <ul>
-                        {{#each list}}
-                            <li>{{this}}</li>
-                        {{/each}}
-                    </ul>
-                {{/if}}
-                {{#if ratings}}
+            <section>
+                <div class="container-fluid headline">
                     <div class="row">
-                        {{#each ratings}}
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        {{item}}
-                                    </div>
-                                    <div class="col-xs-6 align-right">
-                                        {{stars rating}}
-                                    </div>
-                                </div>
-                            </div>
-                        {{/each}}
+                        <div class="col-12">
+                            <h1 id="headline-{{id}}">{{heading}}</h1>
+                        </div>
                     </div>
-                {{/if}}
-                {{#if links}}
-                    <ul class="list-unstyled">
-                        {{#each links}}
-                            <li>{{link url text description}}</li>
-                        {{/each}}
-                    </ul>
-                {{/if}}
+                </div>
+                {{#each content}}
+                    <div class="container-fluid content">
+                        <div class="row">
+                            {{#if heading}}
+                                <div class="col-12">
+                                    <h2>{{heading}}</h2>
+                                </div>
+                            {{/if}}
+                            {{#if subheading}}
+                                <div class="col-12">
+                                    <h3>{{subheading}}</h3>
+                                </div>
+                            {{/if}}
+                            {{#each text}}
+                                <div class="col-12">
+                                    <p>{{this}}</p>
+                                </div>
+                            {{/each}}
+                            {{#if list}}
+                                <div class="col-12">
+                                    <ul>
+                                        {{#each list}}
+                                            <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            {{/if}}
+                            {{#if ratings}}
+                                {{#each ratings}}
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                {{item}}
+                                            </div>
+                                            <div class="col-6 text-right">
+                                                {{stars rating}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            {{/if}}
+                            {{#if links}}
+                                <div class="col-12">
+                                    <ul>
+                                        {{#each links}}
+                                            <li>{{link url description}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/each}}
             {{/each}}
-        {{/each}}
+        </section>
     {% endraw %}
 </script>
-<script id="templatePortfolio" type="text/x-handlebars-template">
+<!-- <script id="templatePortfolio" type="text/x-handlebars-template">
     <h2 id="headline-projects">Projects</h2>
     <hr/>
     {% raw %}
         {{#each entries}}
             {{#ifRowEnd @index entries.length}}</div>{{/ifRowEnd}}
             {{#ifRowBegin @index}}<div class="row">{{/ifRowBegin}}
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <h4>{{title}}</h4>
-                <p><img class="img-responsive" src="assets/images/{{screenshot}}" /></p>
+                <p><img class="img-fluid" src="assets/images/{{screenshot}}" /></p>
                 <ul class="list-inline">
                     {{#each roles}}
-                        <li>{{this}}</li>
+                        <li class="list-inline-item">{{this}}</li>
                     {{/each}}
                 </ul>
             </div>
         {{/each}}
     {% endraw %}
-</script>
+</script> -->
