@@ -1,3 +1,23 @@
+# jekyll #
+##########
 _site
 .sass-cache
 .jekyll-metadata
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon
+Thumbs.db
+._*
+
+# NODE #
+########
+node_modules
+
+# VSCode #
+##########
+.vscode/
+.csscomb.json
+.scss-lint.yml

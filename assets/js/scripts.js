@@ -9,87 +9,44 @@ jawJs.sections = [
 
 jawJs.paddingTop = 73;
 
-$(document).ready(function () {
-    var today = new Date(),
-        year = today.getFullYear(),
-        cr_year = document.createTextNode(year),
-        cr_year_element = document.getElementById('copyrightYear');
+(function() {
+    document.addEventListener('DOMContentLoaded', function(e) {
+        var today = new Date();
+        document.getElementById('copyrightYear').innerHTML = today.getFullYear();
 
-    cr_year_element.appendChild(cr_year);
+        ['resume', 'portfolio'].forEach(function(id) {
+            var data = jawJs.data[id],
+                section = document.getElementById(id);
 
-    jawJs.sections.forEach( function(el, i) {
-        var section = el,
-            sectionData = jawJs.data[section.toLowerCase()],
-            sectionContent = $('#section' + section + ' .content');
-
-        if (sectionData && sectionContent !== '') {
-            var templateScript = $('#template' + section).html(),
-                template = Handlebars.compile(templateScript);
-
-            $('#section' + section + ' .content').html(template(sectionData));
-        }
-    });
-
-    $('#jawNav a, #jawNavMobile a').not('.icon').on('click', function(e) {
-        e.preventDefault();
-
-        var section = $(this).attr('href');
-
-        if ( typeof section !== typeof undefined && section !== false && $(section).length ) {
-            $('html, body').animate({
-                scrollTop: $(section).offset().top - jawJs.paddingTop
-            }, 400);
-
-            if ($('#jawNavMobile').is(':visible')) {
-                $('#jawNavMobile').slideToggle();
+            if (data && section) {
+                var template = Handlebars.compile(document.getElementById('template' + id).innerHTML);
+                section.innerHTML = template(data);
             }
-        }
+        });
     });
-
-    $('.mobile-nav-trigger').on('click', function(e) {
-        $('#jawNavMobile').slideToggle();
-    })
-});
+})();
 
 // Handlebars custom helpers
 Handlebars.registerHelper('link', function(url, description) {
-    var text = Handlebars.Utils.escapeExpression(text),
-        url = Handlebars.Utils.escapeExpression(url),
-  		description  = Handlebars.Utils.escapeExpression(description),
-  		result = '<a href="' + url + '" target="_blank">' + description + '</a>';
+    url = Handlebars.Utils.escapeExpression(url);
+    description  = Handlebars.Utils.escapeExpression(description);
 
-    return new Handlebars.SafeString(result);
+    return new Handlebars.SafeString('<a href="' + url + '">' + description + '</a>');
 });
 
 Handlebars.registerHelper('stars', function(rating) {
-    var rating = Handlebars.Utils.escapeExpression(rating),
-  		result = '';
+  	var result = '';
+    rating = Handlebars.Utils.escapeExpression(rating);
 
     for (var i = 1; i <= rating; i++) {
-		result += '<i class="fa fa-star" aria-hidden="true"></i>';
+		result += '<i class="fas fa-star"></i>';
 	}
 
-	for (var i = 1; i <= 3 - rating; i++) {
-		result += '<i class="fa fa-star-o" aria-hidden="true"></i>';
+	for (var j = 1; j <= 5 - rating; j++) {
+		result += '<i class="far fa-star"></i>';
 	}
 
     return new Handlebars.SafeString(result);
-});
-
-Handlebars.registerHelper('ifRowBegin', function (i, options) {
-    if (i%3 == 0) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
-});
-
-Handlebars.registerHelper('ifRowEnd', function (i, l, options) {
-    if (i > 0 && i%3 == 0 || i > 0 && i == l) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
 });
 
 // Data
@@ -104,16 +61,16 @@ jawJs.data = {
                         "heading": "Languages",
                         "ratings": [
                             {
-                                "item": "HTML",
-                                "rating": 3
+                                "item": "CSS",
+                                "rating": 5
                             },
                             {
-                                "item": "CSS",
-                                "rating": 3
+                                "item": "HTML",
+                                "rating": 5
                             },
                             {
                                 "item": "JavaScript",
-                                "rating": 3
+                                "rating": 5
                             },
                             {
                                 "item": "PHP",
@@ -125,127 +82,66 @@ jawJs.data = {
                             },
                             {
                                 "item": "SQL/MySQL",
-                                "rating": 3
+                                "rating": 4
                             },
-                            {
-                                "item": "ASP.NET MVC3 (C#)",
-                                "rating": 2
-                            },
-                            {
-                                "item": "Apex",
-                                "rating": 2
-                            },
-                            {
-                                "item": "Visualforce",
-                                "rating": 2
-                            },
-                            {
-                                "item": "Ruby on Rails",
-                                "rating": 1
-                            }
-                        ]
-                    },
-                    {
-                        "heading": "Libraries",
-                        "ratings": [
-                            {
-                                "item": "jQuery",
-                                "rating": 3
-                            },
-                            {
-                                "item": "Node.js",
-                                "rating": 3
-                            },
-                            {
-                                "item": "Handlebars.js",
-                                "rating": 3
-                            },
-                            {
-                                "item": "Phaser.js",
-                                "rating": 3
-                            },
-                            {
-                                "item": "Angular.js",
-                                "rating": 2
-                            },
-                            {
-                                "item": "Ember.js",
-                                "rating": 2
-                            }
-                        ]
-                    },
-                    {
-                        "heading": "CMS",
-                        "ratings": [
-                            {
-                                "item": "WordPress",
-                                "rating": 3
-                            },
-                            {
-                                "item": "Drupal",
-                                "rating": 3
-                            },
-                            {
-                                "item": "Expression Engine",
-                                "rating": 1
-                            }
                         ]
                     },
                     {
                         "heading": "Tools",
                         "ratings": [
                             {
-                                "item": "Git",
+                                "item": "Angular",
                                 "rating": 3
+                            },
+                            {
+                                "item": "Git",
+                                "rating": 5
+                            },
+                            {
+                                "item": "Gulp",
+                                "rating": 5
+                            },
+                            {
+                                "item": "Less",
+                                "rating": 4
+                            },
+                            {
+                                "item": "Node",
+                                "rating": 3
+                            },
+                            {
+                                "item": "Sass",
+                                "rating": 5
+                            },
+                            {
+                                "item": "WordPress",
+                                "rating": 5
+                            }
+                        ]
+                    },
+                    {
+                        "heading": "Products",
+                        "ratings": [
+                            {
+                                "item": "Adobe Creative Suite",
+                                "rating": 3
+                            },
+                            {
+                                "item": "Google Analytics",
+                                "rating": 4
                             },
                             {
                                 "item": "Heroku",
                                 "rating": 3
                             },
                             {
-                                "item": "Twitter Bootstrap (3, 4)",
-                                "rating": 3
-                            },
-                            {
-                                "item": "Sass",
-                                "rating": 3
-                            },
-                            {
-                                "item": "Less",
-                                "rating": 3
-                            },
-                            {
-                                "item": "Gulp",
-                                "rating": 2
-                            },
-                            {
-                                "item": "Grunt",
-                                "rating": 2
-                            },
-                            {
                                 "item": "Marketo",
+                                "rating": 5
+                            },
+                            {
+                                "item": "Salesforce",
                                 "rating": 3
                             },
-                            {
-                                "item": "Eloqua",
-                                "rating": 2
-                            },
-                            {
-                                "item": "Adobe Analytics",
-                                "rating": 2
-                            },
-                            {
-                                "item": "Google Analytics",
-                                "rating": 2
-                            },
-                            {
-                                "item": "Adobe Creative Suite",
-                                "rating": 2
-                            },
-                            {
-                                "item": "Phonegap/Cordova",
-                                "rating": 1
-                            }
                         ]
                     }
                 ]

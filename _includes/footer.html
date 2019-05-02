@@ -1,108 +1,52 @@
 <footer>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1 text-center">
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a href="http://linkedin.com/in/jonathanawhitney" target="_blank"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a></li>
-                    <li class="list-inline-item"><a href="http://github.com/jawhitney" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a></li>
-                </ul>
-                <ul class="list-inline">
-                    <li class="list-inline-item">&copy; Jonathan Whitney - <span id="copyrightYear"></span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <p><span><i class="far fa-copyright"></i>&nbsp;Jonathan Whitney </span><span id="copyrightYear"></span></p>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
 <script src="assets/js/scripts.js"></script>
-<script id="templateResume" type="text/x-handlebars-template">
+<script id="templateresume" type="text/x-handlebars-template">
     {% raw %}
         {{#each entries}}
-            <section>
-                <div class="container-fluid headline">
-                    <div class="row">
-                        <div class="col-12">
-                            <h1 id="headline-{{id}}">{{heading}}</h1>
-                        </div>
-                    </div>
-                </div>
-                {{#each content}}
-                    <div class="container-fluid content">
-                        <div class="row">
+            <div class="row">
+                <h3 id="headline-{{id}}">{{heading}}</h3>
+                <div class="wrapper">
+                    {{#each content}}
+                        <article>
                             {{#if heading}}
-                                <div class="col-12">
-                                    <h2>{{heading}}</h2>
-                                </div>
+                                <h4>{{heading}}</h4>
                             {{/if}}
                             {{#if subheading}}
-                                <div class="col-12">
-                                    <h3>{{subheading}}</h3>
-                                </div>
+                                <h5>{{subheading}}</h5>
                             {{/if}}
                             {{#each text}}
-                                <div class="col-12">
-                                    <p>{{this}}</p>
-                                </div>
+                                <p>{{this}}</p>
                             {{/each}}
                             {{#if list}}
-                                <div class="col-12">
-                                    <ul>
-                                        {{#each list}}
-                                            <li>{{this}}</li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
+                                <ul>
+                                    {{#each list}}
+                                        <li>{{this}}</li>
+                                    {{/each}}
+                                </ul>
                             {{/if}}
                             {{#if ratings}}
                                 {{#each ratings}}
-                                    <div class="col-lg-6">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                {{item}}
-                                            </div>
-                                            <div class="col-6 text-right">
-                                                {{stars rating}}
-                                            </div>
-                                        </div>
+                                    <div>
+                                        <span>{{item}}&nbsp;</span>
+                                        <span>{{stars rating}}</span>
                                     </div>
                                 {{/each}}
                             {{/if}}
                             {{#if links}}
-                                <div class="col-12">
-                                    <ul>
-                                        {{#each links}}
-                                            <li>{{link url description}}</li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
+                                <ul>
+                                    {{#each links}}
+                                        <li>{{link url description}}</li>
+                                    {{/each}}
+                                </ul>
                             {{/if}}
-                        </div>
-                    </div>
-                {{/each}}
-            {{/each}}
-        </section>
-    {% endraw %}
-</script>
-<!-- <script id="templatePortfolio" type="text/x-handlebars-template">
-    <h2 id="headline-projects">Projects</h2>
-    <hr/>
-    {% raw %}
-        {{#each entries}}
-            {{#ifRowEnd @index entries.length}}</div>{{/ifRowEnd}}
-            {{#ifRowBegin @index}}<div class="row">{{/ifRowBegin}}
-            <div class="col-lg-4">
-                <h4>{{title}}</h4>
-                <p><img class="img-fluid" src="assets/images/{{screenshot}}" /></p>
-                <ul class="list-inline">
-                    {{#each roles}}
-                        <li class="list-inline-item">{{this}}</li>
+                        </article>
                     {{/each}}
-                </ul>
+                </div>
             </div>
         {{/each}}
     {% endraw %}
-</script> -->
+</script>

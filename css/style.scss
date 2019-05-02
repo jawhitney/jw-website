@@ -2,8 +2,8 @@
 ---
 
 /*!
- * JAW - Main 2.0.0
- * Copyright 2018 Jonathan Whitney
+ * JAW - Main 3.0.0
+ * Copyright 2019 Jonathan Whitney
  */
 
 @charset "utf-8";
@@ -11,136 +11,196 @@
 //== Includes
 @import "inc/variables";
 
-//== Bootstrap
-@import "bootstrap4/bootstrap";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain) */
 
-//== JAW
-@import "inc/global";
-@import "inc/header";
-@import "inc/sections";
-@import "inc/footer";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
 
-//== Font Awesome
-@import "font-awesome/font-awesome";
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 
-// a, button, input, img {
-//     @include transition(all 0.2s ease-out);
-// }
-//
-// ul {
-// 	margin: 0 !important;
-// 	padding: 0 !important;
-// }
-//
-// a:hover {
-// 	opacity: 0.8;
-// }
-//
-// // Sections
-// header,
-// #sectionAbout,
-// footer {
-// 	padding: $jaw-top-bottom 0;
-// 	color: #fff;
-//
-// 	a {
-// 		color: #fff;
-//
-// 		&:link,
-// 		&:visited,
-// 		&:hover,
-// 		&:active {
-// 			color: #fff;
-// 		}
-// 	}
-// }
-//
-// header {
-// 	position: fixed;
-// 	left: 0;
-// 	right: 0;
-// 	z-index: 9999;
-// 	width: 100%;
-// 	min-height: 73px;
-// 	background-color: $jaw-main;
-//
-// 	#logo {
-// 		display: inline-block;
-// 		width: 181px;
-// 		height: 31px;
-// 	}
-// }
-//
-// main {
-// 	padding-top: 73px;
-//
-// 	#headshot {
-// 		max-width: 250px;
-// 	}
-// }
-//
-// section {
-// 	background-color: #fff;
-// }
-//
-// #sectionAbout,
-// footer {
-// 	background-color: $jaw-base-gray;
-// 	text-align: center;
-// }
-//
-// footer {
-// 	margin-top: 15px;
-// 	font-size: 0.8em;
-// }
-//
-// #sectionResume {
-// 	.glyphicon {
-// 		color: #ddd;
-// 	}
-//
-// 	.glyphicon.set {
-// 		color: $jaw-main;
-// 	}
-//
-// }
-//
-// #sectionPortfolio {
-// 	text-align: center;
-//
-// 	img {
-// 		border: 1px solid #ddd;
-// 	}
-//
-// 	li {
-// 		margin-bottom: 5px;
-// 		background-color: #ddd;
-// 		padding: 5px 10px;
-// 		font-size: 0.8em;
-// 	}
-// }
-//
-// #jawNavMobile {
-// 	display: none;
-// 	padding-top: $jaw-top-bottom;
-//
-// 	a {
-// 		display: block;
-// 		padding: 5px 0;
-// 		text-transform: uppercase;
-// 		font-weight: bold;
-// 	}
-// }
-//
-// // Utilities
-// .align-left {
-// 	text-align: left;
-// }
-//
-// .align-center {
-// 	text-align: center;
-// }
-//
-// .align-right {
-// 	text-align: right;
-// }
+ol, ul {
+	list-style: none;
+}
+
+html {font-size: 16px;}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+p { margin-bottom: $spacer / 4; }
+
+h1, h2, h3, h4, h5 {
+    margin: $spacer / 2 0 $spacer / 4;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.488em;
+}
+
+h2 { font-size: 2.074em; }
+h3 { font-size: 1.728em; }
+h4 { font-size: 1.44em; }
+h5 { font-size: 1.2em; }
+small, .text_small { font-size: 0.833em; }
+
+a {
+    color: $blue;
+    transition: color $timing $timing-function;
+
+    &:hover {
+        color: lighten($blue, $color-change);
+    }
+
+    &:visited,
+    &:active {
+        color: darken($blue, $color-change);
+    }
+}
+
+header,
+footer {
+    padding: $spacer / 2 0;
+}
+
+section {
+    padding: 0 $spacer / 2;
+}
+
+main {
+    section:not(:first-child) {
+        margin-bottom: $spacer;
+    }
+}
+
+header {
+    background-color: $blue;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        max-width: 4 * $spacer;
+        color: white;
+
+        &:hover {
+            color: darken(white, $color-change);
+        }
+
+        &:visited,
+        &:active {
+            color: darken(white, 2 * $color-change);
+        }
+    }
+}
+
+#logo img {
+    width: 100%;
+    height: auto;
+}
+
+#hero {
+    padding: $spacer / 2;
+    background-color: $gray;
+    color: white;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#hero .left {
+    margin-bottom: $spacer / 4;
+}
+
+header {
+    #logo {
+        margin-bottom: $spacer / 4;
+    }
+}
+
+@media only screen and (min-width: $md) {
+    .flex {
+        flex-direction: row;
+    }
+
+    header {
+        #logo {
+            margin-bottom: 0;
+            margin-right: auto;
+        }
+    }
+
+    #hero .left {
+        margin-bottom: 0;
+        margin-right: $spacer / 2;
+    }
+}
+
+#headshot {
+    max-width: 250px;
+    height: auto;
+    border-radius: 125px;
+}
+
+footer {
+    background-color: $gray;
+    color: white;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -1 * $spacer / 4
+}
+
+article {
+    flex-grow: 1;
+    margin: 0 $spacer / 4;
+
+    > div {
+        display: flex;
+        flex-direction: row;
+
+        :first-child {
+            margin-right: auto;
+        }
+    }
+}
