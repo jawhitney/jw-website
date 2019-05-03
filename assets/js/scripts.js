@@ -152,101 +152,58 @@ jawJs.data = {
                 "content": [
                     {
                         "heading": "Return Path (Indianapolis, IN)",
-                        "subheading": "Senior Digital Developer (June 2015 - Present)",
+                        "subheading": "Senior Digital Developer (June 2015 to present)",
                         "text": [
-                            "As part of the Marketing Digital team I have supported the development of Return Path's public facing digital properties. This has included device optimization, demand-gen optimization, lead form optimization, digital analytics, CMS optimization, and implementation of new features and functionality. I have also created digital experiences that demonstrate the use of the Return Path product."
+                            "As part of the Marketing Brand/Digital team I have supported the development of Return Path's public facing digital properties. This has included device optimization, demand-gen optimization, lead form optimization, digital analytics, CMS optimization, and implementation of new features and functionality. I have also created digital experiences that demonstrate the use of the Return Path product."
                         ],
                         "links": [
                             {
                                 "url": "https://returnpath.com",
-                                // "text": "ReturnPath.com",
                                 "description": "Return Path corporate site"
                             },
                             {
                                 "url": "https://blog.returnpath.com",
-                                // "text": "Blog",
                                 "description": "Return Path blog"
                             },
                             {
-                                "url": "https://returnpath.com/emailforpresident",
-                                // "text": "Email for President",
-                                "description": "Email for President digital experience"
+                                "url": "https://senderscore.org",
+                                "description": "Sender Score application"
                             },
                             {
-                                "url": "https://returnpath.com/superpowers/",
-                                "description": "Guardians of the Email Universe digital experience"
-                            },
-                            {
-                                "url": "https://returnpath.com/path-to-the-inbox/",
+                                "url": "https://returnpath.com/games/path-to-the-inbox/?playnow=true",
                                 "description": "Path to the Inbox game"
+                            },
+                            {
+                                "url": "https://returnpath.com/games/email-heroes/?playnow=true",
+                                "description": "Email Heroes game"
+                            },
+                            {
+                                "url": "https://returnpath.com/games/the-great-email-escape/?playnow=true",
+                                "description": "The Great Email Escape game"
                             },
                         ]
                     },
                     {
                         "heading": "Salesforce Marketing Cloud/ExactTarget (Indianapolis, IN)",
-                        "subheading": "Digital Developer (October 2013 - Present)",
+                        "subheading": "Digital Developer (October 2013 to June 2015)",
                         "text": [
-                            "As part of the Marketing team I supported the development of Salesforce Marketing Cloud’s public facing digital properties including salesforce.com and exacttarget.com. This has included demand-gen optimization, lead form optimization, digital analytics and refresh of website designs. I have also provided digital experiences for public events including Connections 2014 and South by Southwest 2014 that demonstrated the Salesforce Marketing Cloud product. Internally, I provided a way for our digital property analytics to be easily accessed via Salesforce and Salesforce1."
+                            "As part of the Marketing team I supported the development of Salesforce Marketing Cloud’s public facing digital properties including salesforce.com and exacttarget.com. This included demand-gen optimization, lead form optimization, digital analytics, and refresh of website designs. I also provided digital experiences for public events including Connections 2014 and South by Southwest 2014 that demonstrated the Salesforce Marketing Cloud product. Internally, I provided a way for our digital property analytics to be easily accessed via Salesforce and Salesforce1."
                         ],
-                        // "links": [
-                        //     {
-                        //         "url": "http://exacttarget.com",
-                        //         "text": "ExactTarget.com",
-                        //         "description": "Homepage of the Salesforce Marketing Cloud"
-                        //     },
-                        //     {
-                        //         "url": "http://exacttarget.com/connections",
-                        //         "text": "Connections",
-                        //         "description": "Homepage for the Connections event"
-                        //     },
-                        //     {
-                        //         "url": "http://www.exacttarget.com/blog/journey-builder-and-the-connections-2014-mobile-app/",
-                        //         "text": "Blog Post",
-                        //         "description": "Journey Builder and the Connections 2014 Mobile App"
-                        //     }
-                        // ]
                     },
                     {
                         "heading": "Blue Horseshoe Solutions (Carmel, IN)",
                         "subheading": "Developer (February 2013 to October 2013)",
                         "text": [
-                            "Designed and implemented warehouse management and supply chain solutions for external clients. This has included the design and development of new web applications, debugging of existing web applications, and implementation of new features for existing applications.",
-                            "As the lead technical developer, I designed and developed a web portal for a 3rd Party Logistics Company. This portal allowed this company and the company’s clients to create and edit shipments, reports, items, customers, and accounts. My role included creating wireframes, writing a functional requirements document, performing UI design, and front end/back end design and development. This is application was being built using ASP.NET MVC3, SQL, JavaScript, jQuery, Twitter Bootstrap."
+                            "Designed and implemented warehouse management and supply chain solutions for external clients. This included the design and development of new web applications, debugging of existing web applications, and implementation of new features for existing applications.",
+                            "As the lead technical developer, I designed and developed a web portal for a 3rd Party Logistics Company. This portal allowed this company and the company’s clients to create and edit shipments, reports, items, customers, and accounts. My role included creating wireframes, writing a functional requirements document, performing UI design, and front end/back end design and development. This application was being built using ASP.NET MVC3, SQL, JavaScript, jQuery, Twitter Bootstrap."
                         ]
                     },
                     {
                         "heading": "Keynote, a Cru ministry (Westfield, IN)",
                         "subheading": "Web/App Developer/Designer (January 2009 to December 2012)",
                         "text": [
-                            "Served by designing, developing, and maintaining organizational and evangelistic websites and web applications for Keynote, a Christian, non-profit missionary organization."
+                            "Served by designing, developing, and maintaining organizational and evangelistic websites as well as web applications for Keynote, a Christian, non-profit missionary organization."
                         ],
-                        "links": [
-                            {
-                                "url": "https://github.com/jawhitney/GodToolsWebApp",
-                                "description": "God Tools Web Application (GitHub repo)"
-                                // "description": "Evangelistic HTML5 web application optimized for mobile devices (JQuery Mobile, JavaScript, AJAX)"
-                            },
-                            // {
-                            //     "url": "http://godtoolsapp.com",
-                            //     "text": "God Tools marketing website",
-                            //     "description": "God Tools web, iOS, and Android application marketing page (Twitter Bootstrap, responsive design)"
-                            // },
-                            {
-                                "url": "http://github.com/jawhitney/CruChat",
-                                "description": "CruChat (GitHub repo)",
-                                // "description": "Evangelistic HTML5 Twitter web application (JQuery, PHP, responsive design)"
-                            }
-                            // {
-                            //     "url": "http://missionhub.com",
-                            //     "text": "MissionHub",
-                            //     "description": "Contact management system (performed front-end development in Ruby on Rails)"
-                            // },
-                            // {
-                            //     "url": "http://keynote.org",
-                            //     "text": "Keynote corporate website",
-                            //     "description": "Keynote corporate website (WordPress)"
-                            // }
-                        ]
                     },
                     {
                         "heading": "United Launch Alliance / Lockheed Martin (Littleton, CO)",
@@ -279,20 +236,40 @@ jawJs.data = {
                         "heading": "Awards",
                         "links": [
                             {
-                                "url": "http://www.dotcommawards.com/",
-                                "description": "2017 DotCOMM Platinum award in the \"Outstanding Microsite\" category for Email for President"
+                                "url": "https://enter.dotcommawards.com/winners/#/platinum/2018",
+                                "description": "2018 Platinum award in the \"Online Online Game\" category for Guardians of the Email Universe (dotCOMM Awards)",
                             },
                             {
-                                "url": "http://www.dotcommawards.com/",
-                                "description": "2017 DotCOMM Gold award in the \"Outstanding Microsite\" category for Guardians of the Email Universe"
+                                "url": "http://enter.marcomawards.com/winners/#/platinum/2018",
+                                "description": "2018 Platinum award in \"Outstanding Web Animation\" category for Path to the Inbox game (MarCom Awards)",
                             },
                             {
-                                "url": "https://enter.hermesawards.com/",
-                                "description": "2017 Hermes Creative Platinum award in the \"Interactive Microsite\" category for Email for President"
+                                "url": "http://enter.marcomawards.com/winners/#/gold/2018",
+                                "description": "2018 Gold award in \"Outstanding Web Animation\" category for Guardians of the Email Universe game (MarCom Awards)",
                             },
                             {
-                                "url": "https://enter.hermesawards.com/",
-                                "description": "2017 Hermes Creative Gold award in the \"Interactive Microsite\" category for Guardians of the Email Universe"
+                                "url": "https://enter.dotcommawards.com/winners/#/gold/2018",
+                                "description": "2018 Gold award in the \"Outstanding Microsite\" category for Guardians of the Email Universe (dotCOMM Awards)",
+                            },
+                            {
+                                "url": "https://enter.hermesawards.com/winners/",
+                                "description": "2018 Gold award in the \"Outstanding B2B Website\" category for Return Path website (Hermes Creative Awards)",
+                            },
+                            {
+                                "url": "https://enter.dotcommawards.com/winners/",
+                                "description": "2017 Platinum award in the \"Outstanding Microsite\" category for Email for President (dotCOMM Awards)",
+                            },
+                            {
+                                "url": "https://enter.hermesawards.com/winners/",
+                                "description": "2017 Platinum award in the \"Outstanding Microsite\" category for Email for President (Hermes Creative Awards)",
+                            },
+                            {
+                                "url": "https://enter.dotcommawards.com/winners/",
+                                "description": "2017 Gold award in the \"Outstanding Microsite\" category for Guardians of the Email Universe (dotCOMM Awards)",
+                            },
+                            {
+                                "url": "https://enter.hermesawards.com/winners/",
+                                "description": "2017 Gold award in the \"Outstanding Microsite\" category for Guardians of the Email Universe (Hermes Creative Awards)",
                             },
                         ]
                     },
@@ -323,88 +300,4 @@ jawJs.data = {
             }
         ]
     },
-    // "portfolio": {
-    //     "entries": [
-    //         {
-    //             "title": "ExactTarget/Salesforce Marketing Cloud Corporate Website",
-    //             "url": "http://exacttarget.com",
-    //             "screenshot": "sfmc.jpg",
-    //             "roles": [
-    //                 "HTML",
-    //                 "CSS",
-    //                 "JavaScript",
-    //                 "jQuery",
-    //                 "PHP",
-    //                 "Drupal",
-    //                 "Lead Generation"
-    //             ]
-    //         },
-    //         {
-    //             "title": "Connections 2014 Website",
-    //             "url": "http://exacttarget.com/connections",
-    //             "screenshot": "cnx14.jpg",
-    //             "roles": [
-    //                 "HTML",
-    //                 "CSS",
-    //                 "JavaScript",
-    //                 "jQuery",
-    //                 "PHP",
-    //                 "Drupal",
-    //                 "Ember.js"
-    //             ]
-    //         },
-    //         {
-    //             "title": "God Tools Web Application",
-    //             "url": "https://github.com/jawhitney/GodToolsWebApp",
-    //             "screenshot": "godtools-webapp.jpg",
-    //             "roles": [
-    //                 "HTML",
-    //                 "CSS",
-    //                 "JavaScript",
-    //                 "jQuery",
-    //                 "jQuery Mobile"
-    //             ]
-    //         },
-    //         {
-    //             "title": "God Tools Marketing Website",
-    //             "url": "http://godtoolsapp.com/",
-    //             "screenshot": "godtools-marketing.jpg",
-    //             "roles": [
-    //                 "HTML",
-    //                 "CSS",
-    //                 "JavaScript",
-    //                 "jQuery",
-    //                 "Twitter Bootstrap",
-    //                 "Responsive Design"
-    //             ]
-    //         },
-    //         {
-    //             "title": "CruChat Twitter Application",
-    //             "url": "http://github.com/jawhitney/CruChat",
-    //             "screenshot": "cruchat.jpg",
-    //             "roles": [
-    //                 "HTML",
-    //                 "CSS",
-    //                 "JavaScript",
-    //                 "JQuery",
-    //                 "PHP",
-    //                 "MySQL",
-    //                 "Twitter Bootstrap",
-    //                 "Responsive Design"
-    //             ]
-    //         },
-    //         {
-    //             "title": "Keynote Corporate Website",
-    //             "url": "http://keynote.org/",
-    //             "screenshot": "keynote.jpg",
-    //             "roles": [
-    //                 "HTML",
-    //                 "CSS",
-    //                 "JQuery",
-    //                 "PHP",
-    //                 "WordPress"
-    //             ]
-    //         }
-    //     ]
-    // }
 }
