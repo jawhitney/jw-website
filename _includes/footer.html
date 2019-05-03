@@ -8,7 +8,7 @@
     {% raw %}
         {{#each entries}}
             <div class="row">
-                <h3 id="headline-{{id}}">{{heading}}</h3>
+                <div id="headline-{{id}}" class="headline"><span>{{heading}}</span></div>
                 <div class="wrapper">
                     {{#each content}}
                         <article>
@@ -30,9 +30,13 @@
                             {{/if}}
                             {{#if ratings}}
                                 {{#each ratings}}
-                                    <div>
-                                        <span>{{item}}&nbsp;</span>
-                                        <span>{{stars rating}}</span>
+                                    <div class="rating" data-rating="{{rating}}">
+                                        <span class="value">{{item}}&nbsp;</span>
+                                        <div class="progress">
+                                            <span></span>
+                                            <span></span>
+                                            <span>{{rating}}%</span>
+                                        </div>
                                     </div>
                                 {{/each}}
                             {{/if}}

@@ -9,6 +9,18 @@ jawJs.sections = [
 
 jawJs.paddingTop = 73;
 
+function updateArticle(article) {
+    article.classList.add('loaded');
+}
+
+function updateRating(rating) {
+    rating.classList.add('loaded');
+
+    [].slice.call(rating.querySelectorAll('.progress span:nth-child(2)')).forEach(function(progress) {
+        progress.style.width = rating.dataset.rating + '%';
+    });
+}
+
 (function() {
     document.addEventListener('DOMContentLoaded', function(e) {
         var today = new Date();
@@ -23,6 +35,45 @@ jawJs.paddingTop = 73;
                 section.innerHTML = template(data);
             }
         });
+
+        var ratings = [].slice.call(document.querySelectorAll('.rating')),
+            articles = [].slice.call(document.querySelectorAll('article'));
+
+        if ('IntersectionObserver' in window) {
+            var ratingObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        ratingObserver.unobserve(entry.target);
+                        updateRating(entry.target);
+                    }
+                });
+            });
+
+            ratings.forEach(function(rating) {
+                ratingObserver.observe(rating);
+            });
+
+            var articleObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        articleObserver.unobserve(entry.target);
+                        updateArticle(entry.target);
+                    }
+                });
+            });
+
+            articles.forEach(function(rating) {
+                articleObserver.observe(rating);
+            });
+        } else {
+            ratings.forEach(function(rating) {
+                updateRating(rating);
+            });
+
+            articles.forEach(function(rating) {
+                updateArticle(rating);
+            });
+        }
     });
 })();
 
@@ -32,21 +83,6 @@ Handlebars.registerHelper('link', function(url, description) {
     description  = Handlebars.Utils.escapeExpression(description);
 
     return new Handlebars.SafeString('<a href="' + url + '">' + description + '</a>');
-});
-
-Handlebars.registerHelper('stars', function(rating) {
-  	var result = '';
-    rating = Handlebars.Utils.escapeExpression(rating);
-
-    for (var i = 1; i <= rating; i++) {
-		result += '<i class="fas fa-star"></i>';
-	}
-
-	for (var j = 1; j <= 5 - rating; j++) {
-		result += '<i class="far fa-star"></i>';
-	}
-
-    return new Handlebars.SafeString(result);
 });
 
 // Data
@@ -62,27 +98,27 @@ jawJs.data = {
                         "ratings": [
                             {
                                 "item": "CSS",
-                                "rating": 5
+                                "rating": 100
                             },
                             {
                                 "item": "HTML",
-                                "rating": 5
+                                "rating": 100
                             },
                             {
                                 "item": "JavaScript",
-                                "rating": 5
+                                "rating": 100
                             },
                             {
                                 "item": "PHP",
-                                "rating": 3
+                                "rating": 60
                             },
                             {
                                 "item": "Python",
-                                "rating": 3
+                                "rating": 60
                             },
                             {
                                 "item": "SQL/MySQL",
-                                "rating": 4
+                                "rating": 80
                             },
                         ]
                     },
@@ -91,31 +127,31 @@ jawJs.data = {
                         "ratings": [
                             {
                                 "item": "Angular",
-                                "rating": 3
+                                "rating": 60
                             },
                             {
                                 "item": "Git",
-                                "rating": 5
+                                "rating": 100
                             },
                             {
                                 "item": "Gulp",
-                                "rating": 5
+                                "rating": 100
                             },
                             {
                                 "item": "Less",
-                                "rating": 4
+                                "rating": 80
                             },
                             {
                                 "item": "Node",
-                                "rating": 3
+                                "rating": 60
                             },
                             {
                                 "item": "Sass",
-                                "rating": 5
+                                "rating": 100
                             },
                             {
                                 "item": "WordPress",
-                                "rating": 5
+                                "rating": 100
                             }
                         ]
                     },
@@ -123,24 +159,28 @@ jawJs.data = {
                         "heading": "Products",
                         "ratings": [
                             {
-                                "item": "Adobe Creative Suite",
-                                "rating": 3
-                            },
-                            {
                                 "item": "Google Analytics",
-                                "rating": 4
+                                "rating": 80
                             },
                             {
                                 "item": "Heroku",
-                                "rating": 3
+                                "rating": 60
+                            },
+                            {
+                                "item": "Illustrator",
+                                "rating": 60
                             },
                             {
                                 "item": "Marketo",
-                                "rating": 5
+                                "rating": 100
+                            },
+                            {
+                                "item": "Photoshop",
+                                "rating": 80
                             },
                             {
                                 "item": "Salesforce",
-                                "rating": 3
+                                "rating": 60
                             },
                         ]
                     }
@@ -194,8 +234,7 @@ jawJs.data = {
                         "heading": "Blue Horseshoe Solutions (Carmel, IN)",
                         "subheading": "Developer (February 2013 to October 2013)",
                         "text": [
-                            "Designed and implemented warehouse management and supply chain solutions for external clients. This included the design and development of new web applications, debugging of existing web applications, and implementation of new features for existing applications.",
-                            "As the lead technical developer, I designed and developed a web portal for a 3rd Party Logistics Company. This portal allowed this company and the company’s clients to create and edit shipments, reports, items, customers, and accounts. My role included creating wireframes, writing a functional requirements document, performing UI design, and front end/back end design and development. This application was being built using ASP.NET MVC3, SQL, JavaScript, jQuery, Twitter Bootstrap."
+                            "Designed and implemented warehouse management and supply chain solutions for external clients. This included the design and development of new web applications, debugging of existing web applications, and implementation of new features for existing applications."
                         ]
                     },
                     {
