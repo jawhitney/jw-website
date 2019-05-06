@@ -110,7 +110,7 @@ jawJs.data = {
                             },
                             {
                                 "item": "PHP",
-                                "rating": 60
+                                "rating": 100
                             },
                             {
                                 "item": "Python",
@@ -118,13 +118,17 @@ jawJs.data = {
                             },
                             {
                                 "item": "SQL/MySQL",
-                                "rating": 80
+                                "rating": 100
                             },
                         ]
                     },
                     {
                         "heading": "Tools",
                         "ratings": [
+                            {
+                                "item": "AEM",
+                                "rating": 60
+                            },
                             {
                                 "item": "Angular",
                                 "rating": 60
@@ -143,7 +147,7 @@ jawJs.data = {
                             },
                             {
                                 "item": "Node",
-                                "rating": 60
+                                "rating": 80
                             },
                             {
                                 "item": "Sass",
@@ -158,6 +162,10 @@ jawJs.data = {
                     {
                         "heading": "Products",
                         "ratings": [
+                            {
+                                "item": "Bootstrap",
+                                "rating": 100
+                            },
                             {
                                 "item": "Google Analytics",
                                 "rating": 80
@@ -227,7 +235,7 @@ jawJs.data = {
                         "heading": "Salesforce Marketing Cloud/ExactTarget (Indianapolis, IN)",
                         "subheading": "Digital Developer (October 2013 to June 2015)",
                         "text": [
-                            "As part of the Marketing team I supported the development of Salesforce Marketing Cloud’s public facing digital properties including salesforce.com and exacttarget.com. This included demand-gen optimization, lead form optimization, digital analytics, and refresh of website designs. I also provided digital experiences for public events including Connections 2014 and South by Southwest 2014 that demonstrated the Salesforce Marketing Cloud product. Internally, I provided a way for our digital property analytics to be easily accessed via Salesforce and Salesforce1."
+                            "As part of the WWW Front End and the Marketing teams I supported the development of Salesforce's and Salesforce Marketing Cloud's public facing digital properties. This has included demand-gen optimization, lead form optimization, digital analytics, refresh of website designs and implementation of new website functionality."
                         ],
                     },
                     {
@@ -248,7 +256,7 @@ jawJs.data = {
                         "heading": "United Launch Alliance / Lockheed Martin (Littleton, CO)",
                         "subheading": "Software Engineering Associate (June 2005 to December 2008)",
                         "text": [
-                            "As a member of the Atlas V rocket Avionics Instrumentation team my responsibilities included providing on-site and remote launch support, designing and implementing new hardware, hardware testing, analyzing pre-flight and post-flight data, and supporting booster and upper stage vehicle production. Supported six launches on-site from Cape Canaveral Air Force Station and Vandenberg Air Force Base. Worked on the design, testing, and implementation of the Atlas V forward-facing video system."
+                            "Responsibilities as a member of the Atlas V Rocket Avionics Instrumentation team included providing on-site and remote launch support, designing and implementing new hardware, hardware testing, analyzing pre-flight and post-flight data, and supporting booster and upper stage vehicle production. Supported six launches on-site from Cape Canaveral Air Force Station and Vandenberg Air Force Base."
                         ]
                     },
                     {
