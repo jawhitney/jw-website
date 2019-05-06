@@ -1,3 +1,8 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
 header,
 footer {
     padding: $spacer / 2 0;
@@ -55,12 +60,41 @@ section {
 
 article {
     flex-grow: 1;
-    margin: 0 $spacer / 4;
     opacity: 0;
+    transition: transform $timing $timing-function,
+                opacity $timing $timing-function;
+}
+
+.multi-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 -1 * $spacer / 4;
+
+    article {
+        margin: 0 $spacer / 4;
+        transform: translateX(-25%);
+
+        &.loaded {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+div:not(.multi-column) > article {
+    &:nth-of-type(odd) {
+        transform: translateX(25%);
+    }
+
+    &:nth-of-type(even) {
+        transform: translateX(-25%);
+    }
 
     &.loaded {
         opacity: 1;
-        transition: opacity 4 * $timing $timing-function;
+        transform: translateX(0);
     }
 }
 
@@ -95,9 +129,7 @@ article {
         span:nth-child(2) {
             width: 0%;
             background-color: $blue;
-            opacity: 0;
-            transition: opacity 4 * $timing $timing-function,
-                        width 4 * $timing $timing-function;
+            transition: width $timing $timing-function;
         }
 
         span:nth-child(3) {
@@ -107,12 +139,6 @@ article {
             right: $spacer / 8;
         }
     }
-
-    &.loaded {
-        .progress span:nth-child(2) {
-            opacity: 1;
-        }
-    }
 }
 
 #hero {
@@ -120,9 +146,27 @@ article {
     background-color: $gray;
     background-image: linear-gradient(to bottom right, $gray, darken($gray, $color-change));
     color: white;
+}
 
-    .left {
-        margin-bottom: $spacer / 4;
+.left {
+    margin-bottom: $spacer / 4;
+    text-align: center;
+    transform: translateX(-25%);
+}
+
+.right {
+    transform: translateX(25%);
+}
+
+.left,
+.right {
+    opacity: 0;
+    transition: opacity $timing $timing-function,
+                transform $timing $timing-function;
+
+    &.loaded {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -138,14 +182,6 @@ article {
     align-items: center;
 }
 
-.wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 -1 * $spacer / 4
-}
-
 @media only screen and (min-width: $md) {
     header {
         #logo {
@@ -158,12 +194,19 @@ article {
         flex-direction: row;
     }
 
-    #hero .left {
-        margin-bottom: 0;
-        margin-right: $spacer / 2;
+    #hero {
+        .left,
+        .right {
+            width: 50%;
+        }
+
+        .left {
+            margin-bottom: 0;
+            margin-right: $spacer / 2;
+        }
     }
 
-    .wrapper {
+    .multi-column {
         flex-direction: row;
     }
 }
@@ -190,15 +233,18 @@ article {
         color: $gray-light;
         text-transform: uppercase;
         font-size: 1.5 * $font-size-base;
+        opacity: 0;
+        transition: opacity $timing $timing-function;
 
         &::before,
         &::after {
             content: "";
             position: absolute;
             top: 50%;
-            width: 1000px;
+            width: 0;
             height: 1px;
             background-color: $gray-light;
+            transition: width 2 * $timing $timing-function;
         }
 
         &::before {
@@ -209,6 +255,17 @@ article {
         &::after {
             left: 100%;
             margin-left: .78125rem;
+        }
+    }
+
+    &.loaded {
+        span {
+            opacity: 1;
+
+            &::before,
+            &::after {
+                width: 500px;
+            }
         }
     }
 }

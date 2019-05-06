@@ -19,8 +19,8 @@ $lg: 992px;
 $xl: 1200px;
 
 // Animation
-$timing: 0.2s;
-$timing-function: ease-out;
+$timing: 0.75s;
+$timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); // ease-out;
 
 // // Spacing
 // $jaw-top-bottom: 20px;

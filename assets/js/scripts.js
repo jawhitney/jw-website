@@ -9,14 +9,15 @@ jawJs.sections = [
 
 jawJs.paddingTop = 73;
 
-function updateArticle(article) {
-    article.classList.add('loaded');
+function updateElement(element) {
+    element.classList.add('loaded');
 }
 
-function updateRating(rating) {
+function updateRating(rating, i) {
     rating.classList.add('loaded');
 
     [].slice.call(rating.querySelectorAll('.progress span:nth-child(2)')).forEach(function(progress) {
+        progress.style.transitionDelay = (i * 0.05) + 's';
         progress.style.width = rating.dataset.rating + '%';
     });
 }
@@ -36,42 +37,45 @@ function updateRating(rating) {
             }
         });
 
-        var ratings = [].slice.call(document.querySelectorAll('.rating')),
-            articles = [].slice.call(document.querySelectorAll('article'));
+        var config = {
+                threshold: [0.5]
+            },
+            ratings = [].slice.call(document.querySelectorAll('.rating')),
+            elements = [].slice.call(document.querySelectorAll('.headline, article, .left, .right'));
 
         if ('IntersectionObserver' in window) {
             var ratingObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
+                entries.forEach(function(entry, i) {
                     if (entry.isIntersecting) {
                         ratingObserver.unobserve(entry.target);
-                        updateRating(entry.target);
+                        updateRating(entry.target, i);
                     }
                 });
-            });
+            }, config);
 
             ratings.forEach(function(rating) {
                 ratingObserver.observe(rating);
             });
 
-            var articleObserver = new IntersectionObserver(function(entries, observer) {
+            var elementObserver = new IntersectionObserver(function(entries, observer) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
-                        articleObserver.unobserve(entry.target);
-                        updateArticle(entry.target);
+                        elementObserver.unobserve(entry.target);
+                        updateElement(entry.target);
                     }
                 });
-            });
+            }, config);
 
-            articles.forEach(function(rating) {
-                articleObserver.observe(rating);
+            elements.forEach(function(element) {
+                elementObserver.observe(element);
             });
         } else {
             ratings.forEach(function(rating) {
                 updateRating(rating);
             });
 
-            articles.forEach(function(rating) {
-                updateArticle(rating);
+            elements.forEach(function(rating) {
+                updateElement(rating);
             });
         }
     });
@@ -92,6 +96,7 @@ jawJs.data = {
             {
                 "heading": "Skills",
                 "id": "technical-skills",
+                "multiColumn": true,
                 "content": [
                     {
                         "heading": "Languages",
@@ -202,7 +207,7 @@ jawJs.data = {
                         "heading": "Return Path (Indianapolis, IN)",
                         "subheading": "Senior Digital Developer (June 2015 to present)",
                         "text": [
-                            "As part of the Marketing Brand/Digital team I have supported the development of Return Path's public facing digital properties. This has included device optimization, demand-gen optimization, lead form optimization, digital analytics, CMS optimization, and implementation of new features and functionality. I have also created digital experiences that demonstrate the use of the Return Path product."
+                            "As part of the Marketing team, I support the development of Return Path’s public-facing digital properties. This includes device optimization, demand-gen optimization, lead form optimization, digital analytics, CMS optimization, and implementation of new features and functionality. I also create digital experiences that demonstrate the use of the Return Path product."
                         ],
                         "links": [
                             {
@@ -235,7 +240,7 @@ jawJs.data = {
                         "heading": "Salesforce Marketing Cloud/ExactTarget (Indianapolis, IN)",
                         "subheading": "Digital Developer (October 2013 to June 2015)",
                         "text": [
-                            "As part of the WWW Front End and the Marketing teams I supported the development of Salesforce's and Salesforce Marketing Cloud's public facing digital properties. This has included demand-gen optimization, lead form optimization, digital analytics, refresh of website designs and implementation of new website functionality."
+                            "As part of the WWW Front-End and the Marketing teams I supported the development of Salesforce’s and Salesforce Marketing Cloud’s public-facing digital properties. This included demand-gen optimization, lead form optimization, digital analytics, refresh of website designs, and implementation of new website functionality."
                         ],
                     },
                     {
@@ -249,7 +254,7 @@ jawJs.data = {
                         "heading": "Keynote, a Cru ministry (Westfield, IN)",
                         "subheading": "Web/App Developer/Designer (January 2009 to December 2012)",
                         "text": [
-                            "Served by designing, developing, and maintaining organizational and evangelistic websites as well as web applications for Keynote, a Christian, non-profit missionary organization."
+                            "Served by designing, developing, and maintaining organizational and evangelistic websites as well as web applications for Keynote, a Christian non-profit missionary organization."
                         ],
                     },
                     {
@@ -346,5 +351,5 @@ jawJs.data = {
                 ]
             }
         ]
-    },
-}
+    }
+};
