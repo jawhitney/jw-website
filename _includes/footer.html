@@ -42,11 +42,26 @@
                         {{#if links}}
                             <ul>
                                 {{#each links}}
-                                    <li>{{link url description}}</li>
+                                    <li><a href="{{url}}" title={{description}}>{{description}}</a></li>
                                 {{/each}}
                             </ul>
                         {{/if}}
                     </article>
+                    {{#if cards}}
+                        <article>
+                            <div class="multi-column cards">
+                                {{#each cards}}
+                                    <div class="card">
+                                        <a href="{{url}}" title="{{description}}">
+                                            <img src="assets/images/{{image}}" alt="{{description}}" />
+                                            <h5>{{description}}</h5>
+                                            <p>{{skills}}</p>
+                                        </a>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </article>
+                    {{/if}}
                 {{/each}}
             </div>
         {{/each}}

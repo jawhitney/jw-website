@@ -30,7 +30,7 @@ small, .text_small { font-size: 0.833em; }
 
 a {
     color: $blue;
-    transition: color $timing $timing-function;
+    transition: color $timing / 2 $timing-function;
 
     &:hover {
         color: lighten($blue, $color-change);

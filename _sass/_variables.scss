@@ -20,7 +20,8 @@ $xl: 1200px;
 
 // Animation
 $timing: 0.75s;
-$timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); // ease-out;
+$timing-function: ease-out;
+$timing-function-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 // // Spacing
 // $jaw-top-bottom: 20px;

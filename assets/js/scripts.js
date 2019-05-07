@@ -41,6 +41,7 @@ function updateRating(rating, i) {
                 threshold: [0.5]
             },
             ratings = [].slice.call(document.querySelectorAll('.rating')),
+            cards = [].slice.call(document.querySelectorAll('.card')),
             elements = [].slice.call(document.querySelectorAll('.headline, article, .left, .right'));
 
         if ('IntersectionObserver' in window) {
@@ -70,24 +71,20 @@ function updateRating(rating, i) {
                 elementObserver.observe(element);
             });
         } else {
-            ratings.forEach(function(rating) {
-                updateRating(rating);
+            ratings.forEach(function(rating, i) {
+                updateRating(rating, i);
             });
 
             elements.forEach(function(rating) {
                 updateElement(rating);
             });
         }
+
+        cards.forEach(function(card, i) {
+            card.style.transitionDelay = (i * 0.1) + 's';
+        });
     });
 })();
-
-// Handlebars custom helpers
-Handlebars.registerHelper('link', function(url, description) {
-    url = Handlebars.Utils.escapeExpression(url);
-    description  = Handlebars.Utils.escapeExpression(description);
-
-    return new Handlebars.SafeString('<a href="' + url + '">' + description + '</a>');
-});
 
 // Data
 jawJs.data = {
@@ -209,30 +206,60 @@ jawJs.data = {
                         "text": [
                             "As part of the Marketing team, I support the development of Return Path’s public-facing digital properties. This includes device optimization, demand-gen optimization, lead form optimization, digital analytics, CMS optimization, and implementation of new features and functionality. I also create digital experiences that demonstrate the use of the Return Path product."
                         ],
-                        "links": [
+                        "cards": [
                             {
                                 "url": "https://returnpath.com",
-                                "description": "Return Path corporate site"
+                                "description": "Return Path corporate site",
+                                "skills": "WordPress",
+                                "image": "return-path.jpg",
+                            },
+                            {
+                                "url": "https://returnpath.com/solutions/",
+                                "description": "Return Path solutions",
+                                "skills": "WordPress",
+                                "image": "return-path-solutions.jpg",
+                            },
+                            {
+                                "url": "https://returnpath.com/request-a-demo/",
+                                "description": "Return Path Request a Demo",
+                                "skills": "WordPress, Marketo",
+                                "image": "return-path-rad.jpg",
                             },
                             {
                                 "url": "https://blog.returnpath.com",
-                                "description": "Return Path blog"
+                                "description": "Return Path blog",
+                                "skills": "WordPress",
+                                "image": "return-path-blog.jpg",
+                            },
+                            {
+                                "url": "https://emaildna.com",
+                                "description": "EmailDNA",
+                                "skills": "WordPress",
+                                "image": "emaildna.jpg",
                             },
                             {
                                 "url": "https://senderscore.org",
-                                "description": "Sender Score application"
+                                "description": "Sender Score application",
+                                "skills": "PHP",
+                                "image": "senderscore.jpg",
                             },
                             {
                                 "url": "https://returnpath.com/games/path-to-the-inbox/?playnow=true",
-                                "description": "Path to the Inbox game"
+                                "description": "Path to the Inbox game",
+                                "skills": "JavaScript, PhaserJS",
+                                "image": "path-to-the-inbox.jpg",
                             },
                             {
                                 "url": "https://returnpath.com/games/email-heroes/?playnow=true",
-                                "description": "Email Heroes game"
+                                "description": "Email Heroes game",
+                                "skills": "JavaScript, PhaserJS",
+                                "image": "email-heroes.jpg",
                             },
                             {
                                 "url": "https://returnpath.com/games/the-great-email-escape/?playnow=true",
-                                "description": "The Great Email Escape game"
+                                "description": "The Great Email Escape game",
+                                "skills": "JavaScript, PhaserJS",
+                                "image": "great-email-escape.jpg",
                             },
                         ]
                     },
