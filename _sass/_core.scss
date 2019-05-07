@@ -271,37 +271,35 @@ div:not(.multi-column) > article {
 }
 
 .cards {
-    margin-bottom: -1 * $spacer / 4
+    display: block;
+    margin-bottom: -1 * $spacer / 4;
+
+    article {
+        margin: 0;
+        padding: $spacer / 4;
+    }
 }
 
 .card {
     position: relative;
     display: inline-block;
-    margin: $spacer / 4 0;
-    padding: 0 $spacer / 4;
+    padding-top: (525/1000) * 100%;
     width: 100%;
+    height: 0;
     opacity: 0;
     transition: opacity $timing $timing-function-bounce;
 
-    a {
-        position: relative;
-        display: inline-block;
-        padding-top: (525/1000) * 100%;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
         width: 100%;
-        height: 0;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            background-color: rgba($blue, 0.9);
-            opacity: 0;
-            transition: opacity $timing / 2 $timing-function;
-        }
+        height: 100%;
+        background-color: rgba($blue, 0.9);
+        opacity: 0;
+        transition: opacity $timing / 2 $timing-function;
     }
 
     img, h5, p {
@@ -338,7 +336,7 @@ div:not(.multi-column) > article {
     }
 
     &:hover {
-        a::before {
+        &::before {
             opacity: 1;
         }
 
@@ -356,14 +354,18 @@ div:not(.multi-column) > article {
     }
 }
 
-article.loaded {
+.loaded {
     .card {
         opacity: 1;
     }
 }
 
 @media only screen and (min-width: $md) {
-    .card {
-        width: 1/3 * 100%;
+    .cards {
+        display: flex;
+
+        article {
+            width: 1/3 * 100%;
+        }
     }
 }

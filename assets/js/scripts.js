@@ -41,7 +41,6 @@ function updateRating(rating, i) {
                 threshold: [0.5]
             },
             ratings = [].slice.call(document.querySelectorAll('.rating')),
-            cards = [].slice.call(document.querySelectorAll('.card')),
             elements = [].slice.call(document.querySelectorAll('.headline, article, .left, .right'));
 
         if ('IntersectionObserver' in window) {
@@ -79,10 +78,6 @@ function updateRating(rating, i) {
                 updateElement(rating);
             });
         }
-
-        cards.forEach(function(card, i) {
-            card.style.transitionDelay = (i * 0.1) + 's';
-        });
     });
 })();
 

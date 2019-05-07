@@ -48,19 +48,17 @@
                         {{/if}}
                     </article>
                     {{#if cards}}
-                        <article>
-                            <div class="multi-column cards">
-                                {{#each cards}}
-                                    <div class="card">
-                                        <a href="{{url}}" title="{{description}}">
-                                            <img src="assets/images/{{image}}" alt="{{description}}" />
-                                            <h5>{{description}}</h5>
-                                            <p>{{skills}}</p>
-                                        </a>
-                                    </div>
-                                {{/each}}
-                            </div>
-                        </article>
+                        <div class="multi-column cards">
+                            {{#each cards}}
+                                <article>
+                                    <a href="{{url}}" class="card" title="{{description}}">
+                                        <img src="assets/images/{{image}}" alt="{{description}}" />
+                                        <h5>{{description}}</h5>
+                                        <p>{{skills}}</p>
+                                    </a>
+                                </article>
+                            {{/each}}
+                        </div>
                     {{/if}}
                 {{/each}}
             </div>
