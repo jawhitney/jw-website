@@ -1,0 +1,67 @@
+<footer>
+    <p><span><i class="far fa-copyright"></i>&nbsp;Jonathan Whitney </span><span id="copyrightYear"></span></p>
+</footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script id="templateresume" type="text/x-handlebars-template">
+    {% raw %}
+        {{#each entries}}
+            <div id="headline-{{id}}" class="headline"><span>{{heading}}</span></div>
+            <div class="{{#if multiColumn}}multi-column{{/if}}">
+                {{#each content}}
+                    <article>
+                        {{#if heading}}
+                            <h4>{{heading}}</h4>
+                        {{/if}}
+                        {{#if subheading}}
+                            <h5>{{subheading}}</h5>
+                        {{/if}}
+                        {{#each text}}
+                            <p>{{this}}</p>
+                        {{/each}}
+                        {{#if list}}
+                            <ul>
+                                {{#each list}}
+                                    <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        {{/if}}
+                        {{#if ratings}}
+                            {{#each ratings}}
+                                <div class="rating" data-rating="{{rating}}">
+                                    <span class="value">{{item}}&nbsp;</span>
+                                    <div class="progress">
+                                        <span></span>
+                                        <span></span>
+                                        <span>{{rating}}%</span>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        {{/if}}
+                        {{#if links}}
+                            <ul>
+                                {{#each links}}
+                                    <li><a href="{{url}}" title={{description}}>{{description}}</a></li>
+                                {{/each}}
+                            </ul>
+                        {{/if}}
+                    </article>
+                    {{#if cards}}
+                        <div class="multi-column cards">
+                            {{#each cards}}
+                                <article>
+                                    <a href="{{url}}" class="card" title="{{description}}">
+                                        <img src="assets/images/{{image}}" alt="{{description}}" />
+                                        <h5>{{description}}</h5>
+                                        <p>{{skills}}</p>
+                                    </a>
+                                </article>
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                {{/each}}
+            </div>
+        {{/each}}
+    {% endraw %}
+</script>
