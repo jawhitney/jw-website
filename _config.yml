@@ -3,7 +3,7 @@
 # Site settings
 title: Jonathan Whitney
 email: jonathan.a.whitney@gmail.com
-baseurl: ""
+baseurl: "/jw-website"
 url: "http://jonathanawhitney.com"
 github_username:  jawhitney
 
