@@ -38,6 +38,6 @@ a {
 
     &:visited,
     &:active {
-        color: darken($blue, $color-change);
+        color: lighten($blue, 2 * $color-change);
     }
 }
