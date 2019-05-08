@@ -59,7 +59,7 @@ section {
 }
 
 article {
-    flex-grow: 1;
+    margin-bottom: $spacer / 2;
     opacity: 0;
     transition: transform $timing $timing-function-bounce,
                 opacity $timing $timing-function-bounce;
@@ -67,13 +67,12 @@ article {
 
 .multi-column {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     margin: 0 -1 * $spacer / 4;
 
     article {
-        margin: 0 $spacer / 4;
+        padding: 0 $spacer / 4;
         transform: translateX(-25%);
 
         &.loaded {
@@ -84,17 +83,17 @@ article {
 }
 
 div:not(.multi-column) > article {
-    &:nth-of-type(odd) {
-        transform: translateX(25%);
-    }
-
-    &:nth-of-type(even) {
-        transform: translateX(-25%);
-    }
+    transform: translateX(-25%);
 
     &.loaded {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+.ratings {
+    article {
+        flex-grow: 1;
     }
 }
 
@@ -174,41 +173,16 @@ div:not(.multi-column) > article {
     margin: 0 auto;
     width: 100%;
     max-width: 1000px;
+
+    > .headline:first-child {
+        margin-top: $spacer / 2;
+    }
 }
 
 .flex {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-@media only screen and (min-width: $md) {
-    header {
-        #logo {
-            margin-bottom: 0;
-            margin-right: auto;
-        }
-    }
-
-    .flex {
-        flex-direction: row;
-    }
-
-    #hero {
-        .left,
-        .right {
-            width: 50%;
-        }
-
-        .left {
-            margin-bottom: 0;
-            margin-right: $spacer / 2;
-        }
-    }
-
-    .multi-column {
-        flex-direction: row;
-    }
 }
 
 #logo img {
@@ -224,7 +198,7 @@ div:not(.multi-column) > article {
 
 .headline {
     overflow: hidden;
-    margin-top: 0.5 * $spacer;
+    margin-bottom: 0.5 * $spacer;
     text-align: center;
 
     span {
@@ -267,16 +241,6 @@ div:not(.multi-column) > article {
                 width: 500px;
             }
         }
-    }
-}
-
-.cards {
-    display: block;
-    margin-bottom: -1 * $spacer / 4;
-
-    article {
-        margin: 0;
-        padding: $spacer / 4;
     }
 }
 
@@ -361,9 +325,41 @@ div:not(.multi-column) > article {
 }
 
 @media only screen and (min-width: $md) {
-    .cards {
-        display: flex;
+    header {
+        #logo {
+            margin-bottom: 0;
+            margin-right: auto;
+        }
+    }
 
+    .flex {
+        flex-direction: row;
+    }
+
+    #hero {
+        .left,
+        .right {
+            width: 50%;
+        }
+
+        .left {
+            margin-bottom: 0;
+            margin-right: $spacer / 2;
+        }
+    }
+
+    .multi-column {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .links {
+        article {
+            width: 1/3 * 100%;
+        }
+    }
+
+    .cards {
         article {
             width: 1/3 * 100%;
         }

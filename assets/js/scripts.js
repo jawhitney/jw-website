@@ -303,12 +303,19 @@ jawJs.data = {
                 ]
             },
             {
-                "heading": "Awards and Publications",
+                "heading": "Awards/Publications",
                 "id": "awardsPublications",
                 "content": [
                     {
-                        "heading": "Awards",
                         "links": [
+                            {
+                                "url": "https://enter.hermesawards.com/winners/#/platinum/2019",
+                                "description": "2019 Platinum award in the \"Outstanding Microsite\" category for Email DNA (Hermes Creative Awards)"
+                            },
+                            {
+                                "url": "https://enter.hermesawards.com/winners/#/gold/2019",
+                                "description": "2019 Gold award in the \"Outstanding Microsite\" category for The Great Email Escape (Hermes Creative Awards)",
+                            },
                             {
                                 "url": "https://enter.dotcommawards.com/winners/#/platinum/2018",
                                 "description": "2018 Platinum award in the \"Online Online Game\" category for Guardians of the Email Universe (dotCOMM Awards)",
@@ -345,17 +352,12 @@ jawJs.data = {
                                 "url": "https://enter.hermesawards.com/winners/",
                                 "description": "2017 Gold award in the \"Outstanding Microsite\" category for Guardians of the Email Universe (Hermes Creative Awards)",
                             },
-                        ]
-                    },
-                    {
-                        "heading": "Publications",
-                        "links": [
                             {
                                 "url": "https://www.salesforce.com/blog/2014/10/journey-builder-and-the-connections-2014-mobile-app.html?mc=marketingcloud.com/blog/journey-builder-and-the-connections-2014-mobile-app",
                                 "description": "Journey Builder and the Connections 2014 Mobile App"
                             },
                         ]
-                    }
+                    },
                 ]
             },
             {

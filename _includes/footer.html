@@ -8,7 +8,7 @@
     {% raw %}
         {{#each entries}}
             <div id="headline-{{id}}" class="headline"><span>{{heading}}</span></div>
-            <div class="{{#if multiColumn}}multi-column{{/if}}">
+            {{#if multiColumn}}<div class="multi-column ratings">{{/if}}
                 {{#each content}}
                     <article>
                         {{#if heading}}
@@ -39,14 +39,16 @@
                                 </div>
                             {{/each}}
                         {{/if}}
-                        {{#if links}}
-                            <ul>
-                                {{#each links}}
-                                    <li><a href="{{url}}" title={{description}}>{{description}}</a></li>
-                                {{/each}}
-                            </ul>
-                        {{/if}}
                     </article>
+                    {{#if links}}
+                        <div class="multi-column links">
+                            {{#each links}}
+                                <article>
+                                    <p><a href="{{url}}" title={{description}}>{{description}}</a></p>
+                                </article>
+                            {{/each}}
+                        </div>
+                    {{/if}}
                     {{#if cards}}
                         <div class="multi-column cards">
                             {{#each cards}}
@@ -61,7 +63,7 @@
                         </div>
                     {{/if}}
                 {{/each}}
-            </div>
+            {{#if multiColumn}}</div>{{/if}}
         {{/each}}
     {% endraw %}
 </script>
