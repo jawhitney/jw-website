@@ -256,6 +256,12 @@ jawJs.data = {
                                 "skills": "JavaScript, PhaserJS",
                                 "image": "great-email-escape.jpg",
                             },
+                            {
+                                "url": "https://returnpath.com/games/email-heroes/?playnow=true",
+                                "description": "Email Heroes quiz",
+                                "skills": "Angular 2",
+                                "image": "email-heroes-quiz.jpg",
+                            },
                         ]
                     },
                     {
